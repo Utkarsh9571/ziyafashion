@@ -7,6 +7,8 @@ import FeaturedDesigns from "@/components/home/FeaturedDesigns";
 import AboutPreview from "@/components/home/AboutPreview";
 import AppointmentCTA from "@/components/home/AppointmentCTA";
 import Testimonials from "@/components/home/Testimonials";
+import HomeBlogSection from "@/components/home/HomeBlogSection";
+import ContactSection from "@/components/common/ContactSection";
 import Newsletter from "@/components/home/Newsletter";
 import Footer from "@/components/layout/Footer";
 
@@ -25,7 +27,7 @@ export default function Home() {
       {/* 4. Brand Positioning (Crafted Around You) */}
       <BrandBanner />
 
-      {/* 5. Tailoring Services (Alterations, Women's, Bridal, Indian & Malay) */}
+      {/* 5. Tailoring Services (Bespoke, Bridal, Traditional, Alterations) */}
       <ServicesSection />
 
       {/* 6. Designed for Every Occasion / Styles */}
@@ -34,13 +36,22 @@ export default function Home() {
       {/* 7. About Ziya Fashion (Where Your Vision Becomes Your Perfect Fit) */}
       <AboutPreview />
 
-      {/* 8. Appointment CTA (Ready to Create Something Made for You?) */}
+      {/* 8. The Ziya Journal (Blog Preview) */}
+      <HomeBlogSection />
+
+      {/* 9. Appointment CTA (Ready to Create Something Made for You?) */}
       <AppointmentCTA />
 
-      {/* 9. Customer Feedback (What Our Customers Say) */}
+      {/* 10. Customer Feedback (What Our Customers Say) */}
       <Testimonials />
 
-      {/* 10. Newsletter (Stay Connected with Ziya Fashion) */}
+      {/* 11. Reusable Contact Section (Let's Create Something That Fits You) */}
+      <ContactSection
+        title="Let's Create Something That Fits You"
+        subtitle="Have a tailoring requirement, alteration request, or a question about our services? Get in touch with Ziya Fashion."
+      />
+
+      {/* 12. Newsletter (Stay Connected with Ziya Fashion) */}
       <Newsletter />
 
       {/* Footer with Instagram Strip and Verified Contact Info */}
@@ -48,4 +59,3 @@ export default function Home() {
     </div>
   );
 }
-

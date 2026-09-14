@@ -16,10 +16,10 @@ export default function DesignGallery() {
         {/* Section Eyebrow, Heading & Description */}
         <div className="text-center mb-10 sm:mb-14">
           <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
-            OUR COLLECTION
+            OUR COLLECTIONS
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
-            Our Collections
+            Styles with a Personal Touch
           </h2>
           <div className="ref-divider">
             <span className="ref-dot" />
@@ -27,7 +27,7 @@ export default function DesignGallery() {
             <span className="ref-dot" />
           </div>
           <p className="text-xs sm:text-sm md:text-base text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our collections of thoughtfully selected styles, combining traditional elegance with contemporary design.
+            Explore distinctive styles that bring together traditional influences, contemporary design and personalised tailoring.
           </p>
         </div>
 
@@ -76,10 +76,10 @@ export default function DesignGallery() {
         {/* Section Primary CTA */}
         <div className="text-center mt-10 sm:mt-12">
           <Link
-            href="/designs"
+            href="/product-gallery/"
             className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
           >
-            <span>EXPLORE OUR COLLECTION</span>
+            <span>VIEW PRODUCT CATALOGUE</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

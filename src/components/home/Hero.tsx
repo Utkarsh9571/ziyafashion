@@ -42,10 +42,10 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4 text-[#ff5252]" />
               </Link>
               <Link
-                href="/services"
+                href="/product-gallery/"
                 className="inline-flex items-center justify-center bg-white/20 hover:bg-white/30 text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm border border-white/30 transition-all uppercase tracking-wider whitespace-nowrap"
               >
-                <span>OUR SERVICES</span>
+                <span>PRODUCT CATALOGUE</span>
               </Link>
             </div>
 

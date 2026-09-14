@@ -30,7 +30,7 @@ export default function ServicesSection() {
             <span className="ref-dot" />
           </div>
           <p className="text-xs sm:text-sm md:text-base text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-            From bespoke tailoring and bridal outfits to traditional wear and professional alterations, our services are tailored to your measurements, style and occasion.
+            From bespoke garments and bridal wear to traditional outfits and professional alterations, we tailor each service around your measurements, style and occasion.
           </p>
         </div>
 
@@ -85,14 +85,13 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* View All Services Footer Link */}
+        {/* View All Services Link */}
         <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-[#212529] hover:bg-[#ff5252] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
+            className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
           >
-            <span>Explore All Atelier Services</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>VIEW ALL SERVICES →</span>
           </Link>
         </div>
 

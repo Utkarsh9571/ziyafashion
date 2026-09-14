@@ -56,10 +56,10 @@ export default function Testimonials() {
                 </div>
               </div>
 
-              {/* Red pill with client name at the bottom */}
+              {/* Red pill with client name & location at the bottom */}
               <div className="mt-4 pt-2 flex justify-start">
                 <span className="inline-block bg-[#ff5252] text-white text-[10px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider">
-                  {item.name}
+                  {item.location ? `${item.name}, ${item.location}` : item.name}
                 </span>
               </div>
             </div>

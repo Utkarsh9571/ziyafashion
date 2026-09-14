@@ -26,10 +26,10 @@ export default function BrandBanner() {
 
             <div className="pt-2 sm:pt-3">
               <Link
-                href="/services"
+                href="/appointment"
                 className="inline-flex items-center gap-3 bg-white text-[#ff5252] hover:bg-neutral-50 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
               >
-                <span>DISCOVER OUR SERVICES</span>
+                <span>BOOK AN APPOINTMENT</span>
                 <div className="w-6 h-6 rounded-full bg-[#ff5252] text-white flex items-center justify-center shrink-0">
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>

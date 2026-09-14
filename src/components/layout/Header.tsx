@@ -29,7 +29,7 @@ export default function Header() {
         {/* Center Navigation links */}
         <nav className="hidden lg:flex items-center gap-7 xl:gap-9 text-[15px] font-medium tracking-normal text-white">
           {NAV_ITEMS.map((item) => {
-            const isActive = item.name === "Home" && pathname === "/";
+            const isActive = pathname === item.href;
             return (
               <div key={item.name} className="relative flex flex-col items-center">
                 <Link
@@ -39,7 +39,7 @@ export default function Header() {
                   {item.name}
                 </Link>
                 {isActive && (
-                  <div className="absolute -bottom-1 w-6 h-[2.5px] bg-black rounded-full" />
+                  <div className="absolute -bottom-1 w-6 h-[2.5px] bg-white rounded-full" />
                 )}
               </div>
             );
@@ -55,7 +55,7 @@ export default function Header() {
             <span>Book Appointment</span>
           </Link>
 
-          <Link href="/designs" className="relative text-white hover:opacity-80 transition-opacity p-1.5" aria-label="Favorites">
+          <Link href="/product-gallery/" className="relative text-white hover:opacity-80 transition-opacity p-1.5" aria-label="Favorites">
             <Heart className="w-5 h-5 stroke-[1.8]" />
             <span className="absolute 0 top-0.5 right-0 bg-[#fef08a] text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
               0

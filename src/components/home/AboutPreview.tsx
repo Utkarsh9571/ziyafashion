@@ -42,15 +42,19 @@ export default function AboutPreview() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#212529] tracking-tight leading-tight">
-              Where Your Vision Becomes Your Perfect Fit
+              Where Your Vision Meets Our Craft
             </h2>
 
+            <h3 className="text-xl font-bold text-[#ff5252] tracking-tight">
+              Made to Be Uniquely Yours
+            </h3>
+
             <p className="text-neutral-600 text-base leading-relaxed">
-              Ziya Fashion is a tailoring boutique in Singapore specialising in custom-made garments designed around your measurements, style and occasion. From elegant everyday wear to sophisticated bridal and traditional outfits, each piece is created with attention to fit, detail and finish.
+              At Ziya Fashion, we believe fashion should feel personal. From the first idea to the final fitting, we focus on thoughtful design, skilled tailoring and attention to every detail to create an outfit that feels truly yours.
             </p>
 
             <p className="text-neutral-600 text-base leading-relaxed">
-              Our tailoring approach brings together traditional craftsmanship and contemporary design. Whether you have a specific design in mind or need guidance in creating the right outfit, we work with you from consultation and fabric selection through to fitting and completion.
+              Whether you have a specific design in mind or need guidance in creating the right outfit, we work with you to bring your vision together with the right fit, fabric, details and finishing.
             </p>
 
             {/* Supporting Points */}
@@ -65,25 +69,25 @@ export default function AboutPreview() {
               <div className="flex items-start gap-3 text-left">
                 <CheckCircle2 className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-sm text-neutral-900">Crafted with Precision</h4>
-                  <p className="text-xs text-neutral-600 mt-0.5">Careful detailing, fabric selection and skilled tailoring throughout the garment-making process.</p>
+                  <h4 className="font-bold text-sm text-neutral-900">Thoughtful Craftsmanship</h4>
+                  <p className="text-xs text-neutral-600 mt-0.5">Careful attention to construction, detailing and finishing throughout the garment.</p>
                 </div>
               </div>
             </div>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
-                href="/appointment"
+                href="/about"
                 className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#e04545] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md transition-all group"
               >
-                <span>Book an Appointment</span>
+                <span>ABOUT ZIYA FASHION</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/about"
+                href="/appointment"
                 className="inline-flex items-center gap-2 text-neutral-800 hover:text-[#ff5252] text-xs font-bold uppercase tracking-wider transition-colors px-4 py-3"
               >
-                <span>Learn More About Us →</span>
+                <span>Book a Fitting →</span>
               </Link>
             </div>
 

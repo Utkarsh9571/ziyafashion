@@ -60,18 +60,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Collections */}
+          {/* Column 2: Product Catalogue */}
           <div className="space-y-4">
             <h3 className="text-[#ff5252] font-bold text-base tracking-wide">
-              Collections
+              Product Catalogue
             </h3>
             <ul className="space-y-2 text-xs text-neutral-300 font-medium">
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Indo-Western Collection</Link></li>
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Pakistani Collection</Link></li>
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Signature Collection</Link></li>
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Women&apos;s Wear</Link></li>
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Men&apos;s Wear</Link></li>
-              <li><Link href="/designs" className="hover:text-white transition-colors">• Kids&apos; Wear</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Bridal Lehenga Tailoring</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Gents Suit Tailoring</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Baju Kahwin Tailoring</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Jubah &amp; Abaya Tailoring</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Ready-Made Saree Tailoring</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Alterations &amp; Fittings</Link></li>
             </ul>
           </div>
 
@@ -81,11 +81,11 @@ export default function Footer() {
               Our Services
             </h3>
             <ul className="space-y-2 text-xs text-neutral-300 font-medium">
+              <li><Link href="/services" className="hover:text-white transition-colors">• Bespoke Tailoring</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">• Bridal &amp; Wedding Wear</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">• Traditional Wear</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">• Alterations &amp; Fittings</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">• Women&apos;s Tailoring</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">• Bridal Wear</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">• Indian &amp; Malay Wear</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">• Bespoke Consultation</Link></li>
+              <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• View Product Catalogue</Link></li>
               <li><Link href="/appointment" className="hover:text-white transition-colors">• Book an Appointment</Link></li>
             </ul>
           </div>
@@ -98,9 +98,10 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2 text-xs text-neutral-300 font-medium">
                 <li><Link href="/" className="hover:text-white transition-colors">• Home</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">• The Ziya Journal (Blog)</Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors">• About Ziya Fashion</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">• Tailoring Process</Link></li>
-                <li><Link href="/designs" className="hover:text-white transition-colors">• Style Showcase</Link></li>
+                <li><Link href="/services" className="hover:text-white transition-colors">• Tailoring Services</Link></li>
+                <li><Link href="/product-gallery/" className="hover:text-white transition-colors">• Product Catalogue</Link></li>
                 <li><Link href="/appointment" className="hover:text-white transition-colors">• Schedule Fitting</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition-colors">• Store Location</Link></li>
               </ul>

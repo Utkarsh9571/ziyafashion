@@ -1,122 +1,107 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import EnquiryForm from "@/components/common/EnquiryForm";
+import { VERIFIED_CONTACT_INFO } from "@/data/referenceData";
+import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us — Ziya Fashion Singapore",
+  description:
+    "Get in touch with Ziya Fashion tailoring boutique in Singapore. Located at Golden Landmark, Victoria Street.",
+};
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero */}
       <section className="w-full bg-[#ff5252] text-white">
         <Header />
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-16 text-center">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/95 uppercase mb-2">
+            SINGAPORE ATELIER
+          </p>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
             Contact Ziya Fashion
           </h1>
           <p className="mt-3 text-xs sm:text-base text-white/95 max-w-xl mx-auto">
-            Get in touch with our atelier team for inquiries and studio consultations.
+            Get in touch with our tailoring team for inquiries, bespoke creations, and fitting consultations.
           </p>
         </div>
       </section>
 
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
+          {/* Left Column: Verified Boutique Information */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-2xl font-extrabold text-[#212529]">Atelier Studio</h2>
-            <p className="text-xs text-neutral-600 leading-relaxed">
-              We welcome clients for private appointments and custom tailoring fittings.
-            </p>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#ff5252]">
+                VISIT OUR BOUTIQUE
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#212529] mt-1">
+                Atelier &amp; Tailoring Studio
+              </h2>
+              <p className="text-xs sm:text-sm text-neutral-600 mt-2 leading-relaxed">
+                We welcome clients for private appointments, bespoke measurements, and garment alteration fittings.
+              </p>
+            </div>
 
-            <div className="space-y-3 pt-2 text-xs text-neutral-700">
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                <MapPin className="w-4 h-4 text-[#ff5252] shrink-0" />
-                <span>California - USA</span>
+            <div className="space-y-3 pt-2 text-xs sm:text-sm text-neutral-700">
+              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
+                <MapPin className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-neutral-900">Boutique Address</p>
+                  <p className="text-neutral-600 mt-0.5">{VERIFIED_CONTACT_INFO.addressLine1}</p>
+                  <p className="text-neutral-600">{VERIFIED_CONTACT_INFO.addressLine2}</p>
+                </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                <Phone className="w-4 h-4 text-[#ff5252] shrink-0" />
-                <span>998-905-764</span>
+
+              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
+                <Phone className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-neutral-900">Phone / WhatsApp</p>
+                  <a
+                    href="tel:+6583636036"
+                    className="text-neutral-600 hover:text-[#ff5252] transition-colors mt-0.5 block"
+                  >
+                    {VERIFIED_CONTACT_INFO.phone}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                <Mail className="w-4 h-4 text-[#ff5252] shrink-0" />
-                <span>info@mycompany.com</span>
+
+              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
+                <Mail className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-neutral-900">Email Address</p>
+                  <a
+                    href={`mailto:${VERIFIED_CONTACT_INFO.email}`}
+                    className="text-neutral-600 hover:text-[#ff5252] transition-colors mt-0.5 block"
+                  >
+                    {VERIFIED_CONTACT_INFO.email}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                <Clock className="w-4 h-4 text-[#ff5252] shrink-0" />
-                <span>Mon - Sun : 24:00 Hours</span>
+
+              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
+                <Clock className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-neutral-900">Operating Hours</p>
+                  <p className="text-neutral-600 mt-0.5">{VERIFIED_CONTACT_INFO.hoursWeekdays}</p>
+                  <p className="text-neutral-600">{VERIFIED_CONTACT_INFO.hoursSunday}</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200/80 shadow-xl">
-            <h2 className="text-xl font-bold text-neutral-900 mb-2">Send an Inquiry</h2>
-            
-            {submitted ? (
-              <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 rounded-2xl text-center space-y-2">
-                <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
-                <p className="font-bold">Message sent successfully!</p>
-                <p className="text-xs">We will contact you shortly.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Full Name"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 text-xs focus:border-[#ff5252] outline-none"
-                  />
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 text-xs focus:border-[#ff5252] outline-none"
-                  />
-                </div>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 text-xs focus:border-[#ff5252] outline-none"
-                />
-                <textarea
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Your message or questions..."
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 text-xs focus:border-[#ff5252] outline-none resize-y"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-[#ff5252] text-white py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#f03e3e] transition-colors shadow-md"
-                >
-                  Send Inquiry
-                </button>
-              </form>
-            )}
+          {/* Right Column: Unified Reusable Enquiry Form */}
+          <div className="lg:col-span-7">
+            <EnquiryForm
+              title="Send an Inquiry"
+              subtitle="Have a question regarding custom tailoring, bridal outfits, traditional attire, or alterations? Let us know your requirements."
+              defaultService="General Tailoring Inquiry"
+            />
           </div>
 
         </div>
