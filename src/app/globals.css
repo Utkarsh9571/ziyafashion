@@ -2,72 +2,52 @@
 
 @layer base {
   :root {
-    --ziya-coral: #ef5350;
-    --ziya-coral-hover: #e53935;
-    --ziya-coral-light: #ff7961;
-    --ziya-coral-soft: #fff1f0;
-    --ziya-dark: #1e2229;
-    --ziya-dark-surface: #2a2f38;
-    --ziya-muted: #6b7280;
-    --ziya-light: #f9fafb;
-    --ziya-card-bg: #f4f5f7;
+    --ziya-coral: #ff5252;
+    --ziya-coral-dark: #f03e3e;
+    --ziya-coral-soft: #ffebee;
+    --ziya-dark-bg: #2f343b;
+    --ziya-dark-bottom: #24292e;
   }
 }
 
 body {
   color: #212529;
   background-color: #ffffff;
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* Custom utility styles for reference aesthetic */
-.bg-coral-gradient {
-  background: linear-gradient(135deg, #f05a5b 0%, #e64445 100%);
-}
-
-.text-coral {
-  color: #ef5350;
-}
-
-.bg-coral {
-  background-color: #ef5350;
-}
-
-.border-coral {
-  border-color: #ef5350;
-}
-
 /* Reference decorative dash divider */
-.ornate-divider {
+.ref-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin: 8px auto 16px auto;
+  gap: 4px;
+  margin: 10px auto 24px auto;
 }
 
-.ornate-divider::before,
-.ornate-divider::after {
+.ref-divider::before,
+.ref-divider::after {
   content: "";
   display: inline-block;
-  width: 36px;
+  width: 32px;
   height: 1.5px;
-  background-color: #f06c6c;
+  background-color: #ff5252;
+  opacity: 0.85;
 }
 
-.ornate-dot {
-  width: 5px;
-  height: 5px;
+.ref-dot {
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background-color: #ef5350;
+  background-color: #ff5252;
   display: inline-block;
 }
 
-.ornate-dot-center {
+.ref-dot-lg {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #ef5350;
+  background-color: #ff5252;
   display: inline-block;
 }

@@ -1,59 +1,53 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FEATURED_COLLECTIONS } from "@/data/siteData";
+import { PREMIUM_SHADES_DATA } from "@/data/referenceData";
 
 export default function CollectionShades() {
   return (
-    <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Section Heading with reference styled divider */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-            Explore Our Collections
+        {/* Centered Heading with reference divider */}
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+            Premium Shades
           </h2>
-          <div className="ornate-divider">
-            <span className="ornate-dot" />
-            <span className="ornate-dot-center" />
-            <span className="ornate-dot" />
+          <div className="ref-divider">
+            <span className="ref-dot" />
+            <span className="ref-dot-lg" />
+            <span className="ref-dot" />
           </div>
-          <p className="text-neutral-500 text-sm max-w-lg mx-auto">
-            Discover signature cuts, hand-finished silhouettes, and bespoke ensembles tailored for every occasion.
-          </p>
         </div>
 
-        {/* 4 Capsule / Horizontal Rounded Category Cards inspired by "Premium Shades" */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {FEATURED_COLLECTIONS.map((col) => (
+        {/* 4 Capsule Rounded Cards matching reference layout (responsive 1 col mobile, 2 col tablet, 4 col desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {PREMIUM_SHADES_DATA.map((item) => (
             <div
-              key={col.id}
-              className="group relative h-40 rounded-[32px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              key={item.id}
+              className={`group relative h-28 sm:h-32 rounded-full overflow-hidden ${item.bgClass} flex items-center justify-between px-5 sm:px-6 shadow-sm hover:shadow-lg transition-all duration-300`}
             >
-              {/* Background capsule color */}
-              <div className={`absolute inset-0 ${col.themeColor} flex items-center justify-between p-6`}>
-                <div className="z-10 max-w-[60%] space-y-2">
-                  <h3 className="font-bold text-lg leading-snug font-serif text-white drop-shadow-sm">
-                    {col.title}
-                  </h3>
-                  <Link
-                    href={col.href}
-                    className="inline-flex items-center gap-1.5 bg-white text-neutral-800 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm hover:bg-neutral-100 transition-colors"
-                  >
-                    <span>{col.badge}</span>
-                    <span>→</span>
-                  </Link>
-                </div>
+              {/* Left text & button */}
+              <div className="z-10 max-w-[58%] space-y-1.5 sm:space-y-2 text-left">
+                <h3 className="font-bold text-sm sm:text-base leading-tight drop-shadow-sm">
+                  {item.title}
+                </h3>
+                <Link
+                  href={item.href}
+                  className="inline-block bg-white text-[#212529] text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full shadow-sm hover:bg-neutral-100 transition-colors"
+                >
+                  {item.ctaText}
+                </Link>
               </div>
 
-              {/* Model cutout / image floating to right */}
-              <div className="absolute right-0 top-0 bottom-0 w-1/2 overflow-hidden pointer-events-none">
+              {/* Right Model cutout image */}
+              <div className="absolute right-0 top-0 bottom-0 w-[45%] overflow-hidden pointer-events-none">
                 <Image
-                  src={col.imageUrl}
-                  alt={col.title}
+                  src={item.modelImage}
+                  alt={item.title}
                   fill
-                  className="object-cover object-top filter brightness-95 group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 15vw"
                 />
               </div>
             </div>

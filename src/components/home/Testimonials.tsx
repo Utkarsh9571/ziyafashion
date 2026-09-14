@@ -1,83 +1,72 @@
 import React from "react";
 import Image from "next/image";
-import { Star } from "lucide-react";
-import { PLACEHOLDER_TESTIMONIALS } from "@/data/siteData";
+import { REFERENCE_TESTIMONIALS } from "@/data/referenceData";
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Section Heading with decorative divider */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-            What Our Clients Say
+        {/* Section Heading */}
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+            What Our Customers Say
           </h2>
-          <div className="ornate-divider">
-            <span className="ornate-dot" />
-            <span className="ornate-dot-center" />
-            <span className="ornate-dot" />
+          <div className="ref-divider">
+            <span className="ref-dot" />
+            <span className="ref-dot-lg" />
+            <span className="ref-dot" />
           </div>
-          <p className="text-neutral-500 text-xs sm:text-sm max-w-lg mx-auto">
-            (Placeholder customer experiences to demonstrate layout until authentic testimonials are supplied)
-          </p>
         </div>
 
-        {/* 3 Testimonial Cards inspired by reference screenshot */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {PLACEHOLDER_TESTIMONIALS.map((t) => (
+        {/* 3 Review Cards matching Screenshot 090104.png (1 col on mobile, 2 col on tablet, 3 col on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {REFERENCE_TESTIMONIALS.map((item) => (
             <div
-              key={t.id}
-              className="bg-white rounded-3xl p-6 shadow-sm border border-neutral-200/70 hover:shadow-md transition-shadow relative flex flex-col justify-between"
+              key={item.id}
+              className="bg-[#f4f4f4] rounded-[34px] p-5 sm:p-6 shadow-sm border border-neutral-100 flex flex-col justify-between"
             >
-              {/* Top Client info header */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="relative w-16 h-20 rounded-xl overflow-hidden bg-neutral-200 shrink-0 border-2 border-[#e84e4e]/20">
+              <div className="flex items-start gap-3 sm:gap-4">
+                {/* Square Avatar with warm background badge */}
+                <div className="relative w-16 sm:w-20 h-20 sm:h-24 rounded-2xl overflow-hidden bg-neutral-200 shrink-0 border border-neutral-300">
                   <Image
-                    src={t.avatarUrl}
-                    alt={t.clientName}
+                    src={item.imageUrl}
+                    alt={item.name}
                     fill
                     className="object-cover object-center"
+                    sizes="(max-width: 640px) 25vw, 15vw"
                   />
                 </div>
-                <div>
-                  <span className="text-[10px] font-bold text-[#e84e4e] uppercase tracking-wider block">
-                    Client Review
-                  </span>
-                  <div className="flex items-center gap-0.5 text-amber-400 my-1">
-                    <Star className="w-3.5 h-3.5 fill-current" />
-                    <Star className="w-3.5 h-3.5 fill-current" />
-                    <Star className="w-3.5 h-3.5 fill-current" />
-                    <Star className="w-3.5 h-3.5 fill-current" />
-                    <Star className="w-3.5 h-3.5 fill-current" />
+
+                {/* Review details */}
+                <div className="space-y-1.5 flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-neutral-800 uppercase tracking-wide truncate">
+                      {item.role}
+                    </span>
+                    <span className="w-6 sm:w-8 h-[1px] bg-neutral-400 shrink-0" />
                   </div>
-                  <h3 className="font-bold text-sm font-serif text-neutral-900">
-                    {t.clientName}
-                  </h3>
-                  <p className="text-[11px] text-neutral-500">
-                    {t.occasion}
+                  
+                  <p className="text-[11px] text-neutral-600 leading-relaxed line-clamp-4">
+                    • {item.text}
                   </p>
                 </div>
               </div>
 
-              {/* Review Text */}
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed italic border-t border-neutral-100 pt-3">
-                “{t.comment}”
-              </p>
-
-              {/* Bottom pill highlight */}
-              <div className="mt-4 pt-2 flex items-center justify-between text-[11px] text-neutral-400">
-                <span>Verified Atelier Experience</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              {/* Red pill with client name at the bottom */}
+              <div className="mt-4 pt-2 flex justify-start">
+                <span className="inline-block bg-[#ff5252] text-white text-[10px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider">
+                  {item.name}
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Carousel pagination dots */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#e84e4e]" />
+        {/* Carousel pagination indicator dots */}
+        <div className="flex items-center justify-center gap-1.5 mt-8">
           <span className="w-2 h-2 rounded-full bg-neutral-300" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5252]" />
           <span className="w-2 h-2 rounded-full bg-neutral-300" />
         </div>
 

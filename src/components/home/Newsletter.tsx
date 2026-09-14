@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -16,55 +16,51 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="w-full py-14 sm:py-18 bg-[#f4f4f4] text-center overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6">
         
-        {/* Section Heading */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-          Stay Inspired
+        {/* Header */}
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+          Subscribe to Our Newsletter
         </h2>
-        <div className="ornate-divider">
-          <span className="ornate-dot" />
-          <span className="ornate-dot-center" />
-          <span className="ornate-dot" />
+        <div className="ref-divider">
+          <span className="ref-dot" />
+          <span className="ref-dot-lg" />
+          <span className="ref-dot" />
         </div>
 
-        <p className="text-neutral-600 text-sm sm:text-base max-w-lg mx-auto mb-10 leading-relaxed font-light">
-          Follow Ziya Fashion for new atelier lookbooks, custom silhouette inspiration, and private appointment slots.
+        {/* Latin paragraph matching reference */}
+        <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
         </p>
 
-        {/* Textured / Capsule Input Container inspired by reference */}
+        {/* Capsule Input Bar with Jeans texture effect and cream SUBSCRIBE button */}
         {subscribed ? (
-          <div className="max-w-lg mx-auto bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-full flex items-center justify-center gap-2 text-sm font-semibold animate-in fade-in">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-            <span>Thank you for connecting with Ziya Fashion!</span>
+          <div className="max-w-md mx-auto bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-full flex items-center justify-center gap-2 text-xs font-bold shadow-sm">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Thank you for subscribing!</span>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto bg-[#24292e] p-2 sm:p-2.5 rounded-full shadow-xl flex flex-col sm:flex-row items-center gap-2 border border-neutral-700"
+            className="max-w-xl mx-auto bg-[#2b2b2b] rounded-full p-1.5 flex flex-col sm:flex-row items-center shadow-xl border border-neutral-700 overflow-hidden relative gap-2 sm:gap-0"
           >
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="ENTER YOUR EMAIL FOR ATELIER UPDATES"
-              className="w-full sm:flex-1 bg-transparent px-6 py-3 text-xs sm:text-sm text-white placeholder-neutral-400 font-medium tracking-wider focus:outline-none text-center sm:text-left"
+              placeholder="ENTER YOUR EMAIL"
+              className="w-full sm:flex-1 bg-transparent px-5 sm:px-6 py-3 text-xs sm:text-sm text-white placeholder-neutral-400 font-bold tracking-wider outline-none text-center sm:text-left"
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-[#fef08a] hover:bg-yellow-300 text-neutral-900 px-8 py-3.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto bg-[#faedaf] hover:bg-[#f6e695] text-neutral-900 px-7 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md transition-all active:scale-95 whitespace-nowrap"
             >
-              <span>Subscribe</span>
-              <Send className="w-3.5 h-3.5 text-neutral-900" />
+              SUBSCRIBE
             </button>
           </form>
         )}
-
-        <p className="text-[11px] text-neutral-400 mt-4">
-          We respect your privacy. No spam — only curated design updates and atelier stories.
-        </p>
 
       </div>
     </section>

@@ -1,111 +1,99 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Eye } from "lucide-react";
-import { FEATURED_TRENDS } from "@/data/siteData";
+import { Heart, Plus, ChevronRight } from "lucide-react";
+import { TRENDING_ITEMS } from "@/data/referenceData";
 
 export default function FeaturedDesigns() {
   return (
-    <section className="py-20 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Header with numbers on right inspired by reference */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-              Trending Atelier Creations
+        {/* Section Header with 01 02 03 04 on right matching screenshot */}
+        <div className="relative flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+          <div className="mx-auto md:mx-0 md:flex-1 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight text-center">
+              Trending a Top Sale
             </h2>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="w-8 h-0.5 bg-[#e84e4e]" />
-              <span className="w-2 h-2 rounded-full bg-[#e84e4e]" />
-              <span className="w-8 h-0.5 bg-[#e84e4e]" />
+            <div className="ref-divider">
+              <span className="ref-dot" />
+              <span className="ref-dot-lg" />
+              <span className="ref-dot" />
             </div>
           </div>
 
-          {/* Number pagination indicators inspired by reference screenshot */}
-          <div className="flex items-center gap-4 text-xs font-bold tracking-widest text-neutral-400">
-            <span className="text-[#e84e4e] border-b border-[#e84e4e] pb-0.5">01</span>
+          {/* Number pagination indicators on right */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wider text-neutral-400 absolute right-0 top-2">
+            <span className="text-[#ff5252] border-b-2 border-[#ff5252] pb-0.5">01</span>
             <span>02</span>
             <span>03</span>
             <span>04</span>
           </div>
         </div>
 
-        {/* 4 Spotlight Design Cards with Distinct Visual Treatments */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {FEATURED_TRENDS.map((item, index) => (
-            <div
-              key={item.id}
-              className={`group rounded-3xl p-4 transition-all duration-300 hover:shadow-xl ${
-                item.isCoralBg
-                  ? "bg-[#e84e4e] text-white shadow-md transform -translate-y-2"
-                  : "bg-white text-neutral-900 border border-neutral-200/80 shadow-sm"
-              }`}
-            >
-              {/* Card Image Container with rounded borders */}
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-neutral-100 mb-4">
-                <Image
-                  src={item.imageUrl}
-                  alt={item.title}
-                  fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
+        {/* 4 Cards Grid: 1 col on mobile, 2 col on tablet, 4 col on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+          {TRENDING_ITEMS.map((item) => {
+            const isFeatured = item.isSpotlight;
 
-                {item.tag && (
-                  <span className="absolute top-3 left-3 bg-white text-[#e84e4e] text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-md uppercase tracking-wider">
-                    {item.tag}
+            return (
+              <div key={item.id} className="flex flex-col items-center text-center w-full">
+                
+                {/* Image Container with rounded borders */}
+                <div
+                  className={`relative w-full aspect-[3/3.8] rounded-[28px] overflow-hidden mb-4 shadow-sm transition-all duration-300 ${
+                    isFeatured ? "bg-[#ff5252] ring-4 ring-[#ff5252]/20" : "bg-[#f4f4f4]"
+                  }`}
+                >
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.title}
+                    fill
+                    className="object-contain object-bottom hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+
+                {/* Hot Badge & Info */}
+                {item.badge && (
+                  <span className="inline-block bg-[#ff5252] text-white text-[10px] font-bold px-3 py-0.5 rounded-full mb-1">
+                    {item.badge}
                   </span>
                 )}
-              </div>
 
-              {/* Title & Info (No Price, purely showcase) */}
-              <div className="space-y-1.5 px-1">
-                <span
-                  className={`text-[11px] font-semibold uppercase tracking-wider ${
-                    item.isCoralBg ? "text-white/80" : "text-[#e84e4e]"
-                  }`}
-                >
-                  {item.category}
-                </span>
-                <h3 className="font-serif font-bold text-base leading-snug">
+                <h3 className="font-extrabold text-base text-[#212529]">
                   {item.title}
                 </h3>
-                <p
-                  className={`text-xs line-clamp-2 ${
-                    item.isCoralBg ? "text-white/85" : "text-neutral-500"
-                  }`}
-                >
-                  {item.description}
-                </p>
-              </div>
 
-              {/* Action Link */}
-              <div className="mt-4 pt-3 border-t border-neutral-200/40">
-                <Link
-                  href={`/appointment?design=${encodeURIComponent(item.title)}`}
-                  className={`w-full inline-flex items-center justify-center gap-1.5 text-xs font-bold py-2 px-3 rounded-full transition-all ${
-                    item.isCoralBg
-                      ? "bg-white text-[#e84e4e] hover:bg-neutral-100"
-                      : "bg-[#e84e4e] text-white hover:bg-[#d83c3c]"
-                  }`}
-                >
-                  <Eye className="w-3.5 h-3.5" />
-                  <span>Request Custom Fit</span>
-                </Link>
+                <p className="font-bold text-sm text-[#ff5252] mt-0.5">
+                  {item.priceDisplay}
+                </p>
+
+                {/* Card 3 action button row matching screenshot */}
+                {isFeatured && (
+                  <div className="mt-3 flex items-center justify-center">
+                    <div className="inline-flex items-center bg-[#ff5252] text-white rounded-full px-4 py-1.5 text-xs font-bold shadow-md gap-2">
+                      <span>Add to Cart</span>
+                      <Heart className="w-3.5 h-3.5 stroke-[2]" />
+                      <div className="w-4 h-4 rounded-full bg-white/30 flex items-center justify-center ml-1">
+                        <Plus className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* View All CTA Link on Right */}
-        <div className="text-right mt-8">
+        {/* Bottom Right "See all products >" Link matching Screenshot 090043.png */}
+        <div className="text-right mt-10">
           <Link
             href="/designs"
-            className="inline-flex items-center gap-1 text-sm font-bold text-[#e84e4e] hover:text-[#d83c3c] transition-colors"
+            className="inline-flex items-center gap-1 text-sm font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
           >
-            <span>See all showcase designs</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>See all products</span>
+            <ChevronRight className="w-4 h-4 text-[#ff5252]" />
           </Link>
         </div>
 

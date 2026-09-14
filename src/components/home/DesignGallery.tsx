@@ -3,177 +3,208 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Scissors, Eye, Calendar, X } from "lucide-react";
-import { CATEGORY_FILTERS, DESIGN_PORTFOLIO, DesignItem } from "@/data/siteData";
+import { CATEGORY_TABS, REFERENCE_PRODUCT_GRID, ProductGridItem } from "@/data/referenceData";
+import { Eye, Calendar, X } from "lucide-react";
 
 export default function DesignGallery() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedDesign, setSelectedDesign] = useState<DesignItem | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductGridItem | null>(null);
 
-  const filteredDesigns = selectedCategory === "all"
-    ? DESIGN_PORTFOLIO
-    : DESIGN_PORTFOLIO.filter((item) => item.categorySlug === selectedCategory);
+  const filteredGrid = selectedCategory === "all"
+    ? REFERENCE_PRODUCT_GRID
+    : REFERENCE_PRODUCT_GRID.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="py-16 bg-neutral-50" id="gallery">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden" id="category-section">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Section Heading */}
+        {/* Category Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-            Design Showcase
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+            Category
           </h2>
-          <div className="ornate-divider">
-            <span className="ornate-dot" />
-            <span className="ornate-dot-center" />
-            <span className="ornate-dot" />
+          <div className="ref-divider">
+            <span className="ref-dot" />
+            <span className="ref-dot-lg" />
+            <span className="ref-dot" />
           </div>
-          <p className="text-neutral-500 text-sm max-w-lg mx-auto">
-            Browse our design gallery to explore silhouettes, fabrics, and tailored looks. Filter by category to find your inspiration.
-          </p>
         </div>
 
-        {/* Icon / Visual Category Filter Tabs inspired by reference */}
-        <div className="flex items-center justify-center gap-3 sm:gap-6 flex-wrap mb-12">
-          {CATEGORY_FILTERS.map((cat) => {
-            const isActive = selectedCategory === cat.id;
+        {/* Category Icons Row with touch-friendly smooth horizontal scroll on mobile */}
+        <div className="w-full overflow-x-auto pb-4 mb-8 sm:mb-12 scrollbar-none">
+          <div className="flex items-center justify-start sm:justify-center gap-6 sm:gap-10 md:gap-12 min-w-max px-2 mx-auto">
+            {CATEGORY_TABS.map((cat) => {
+              const isActive = selectedCategory === cat.id;
+
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className="flex flex-col items-center gap-2 group transition-all shrink-0"
+                >
+                  {/* Visual Icon circle */}
+                  <div
+                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-all ${
+                      isActive
+                        ? "border-2 border-[#ff5252] bg-white shadow-sm scale-105"
+                        : "border border-neutral-200 bg-neutral-50 group-hover:border-neutral-300"
+                    }`}
+                  >
+                    {cat.iconName === "all" && (
+                      <div className="w-8 h-8 rounded-full border-2 border-[#ff5252] flex items-center justify-center">
+                        <span className="w-2 h-2 rounded-full bg-[#ff5252]" />
+                      </div>
+                    )}
+                    {cat.iconName === "dresses" && (
+                      <span className="text-2xl">👗</span>
+                    )}
+                    {cat.iconName === "tshirts" && (
+                      <span className="text-2xl">👚</span>
+                    )}
+                    {cat.iconName === "denim" && (
+                      <span className="text-2xl">👖</span>
+                    )}
+                    {cat.iconName === "jackets" && (
+                      <span className="text-2xl">🧥</span>
+                    )}
+                    {cat.iconName === "coats" && (
+                      <span className="text-2xl">🥼</span>
+                    )}
+                    {cat.iconName === "shoes" && (
+                      <span className="text-2xl">👟</span>
+                    )}
+                  </div>
+
+                  {/* Label */}
+                  <div className="relative flex flex-col items-center">
+                    <span
+                      className={`text-xs sm:text-sm font-semibold whitespace-nowrap ${
+                        isActive ? "text-[#ff5252]" : "text-neutral-700"
+                      }`}
+                    >
+                      {cat.name}
+                    </span>
+                    {isActive && (
+                      <div className="w-5 h-[2.5px] bg-[#ff5252] rounded-full mt-1" />
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 8-Card Fashion Grid: 1 col on mobile, 2 col on tablet, 4 col on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {filteredGrid.map((item, index) => {
+            const isFeaturedCenter = index === 2; // "Short Party Dress" card representation
+            
             return (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`flex flex-col items-center gap-2 group transition-all p-2 rounded-2xl ${
-                  isActive ? "scale-105" : "hover:scale-102 opacity-80 hover:opacity-100"
+              <div
+                key={item.id}
+                onClick={() => setSelectedProduct(item)}
+                className={`group relative rounded-[28px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 aspect-[3/4.2] ${
+                  isFeaturedCenter ? "bg-[#333333]" : "bg-[#ff5252]"
                 }`}
               >
-                {/* Round icon button */}
-                <div
-                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-all shadow-sm ${
-                    isActive
-                      ? "bg-[#e84e4e] text-white shadow-md ring-4 ring-[#e84e4e]/20"
-                      : "bg-white text-neutral-600 border border-neutral-200 group-hover:border-[#e84e4e] group-hover:text-[#e84e4e]"
-                  }`}
-                >
-                  <Sparkles className={`w-6 h-6 ${isActive ? "text-white" : "text-[#e84e4e]"}`} />
-                </div>
-                {/* Category label */}
-                <span
-                  className={`text-xs sm:text-sm font-semibold tracking-wide transition-colors ${
-                    isActive ? "text-[#e84e4e] border-b-2 border-[#e84e4e] pb-0.5" : "text-neutral-600"
-                  }`}
-                >
-                  {cat.name}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* 8-Card Showcase Grid with Coral / Rounded Backgrounds */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredDesigns.map((design) => (
-            <div
-              key={design.id}
-              onClick={() => setSelectedDesign(design)}
-              className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 bg-[#ef5350]"
-            >
-              {/* Card Image Wrapper */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden">
+                {/* Model Photography Image */}
                 <Image
-                  src={design.imageUrl}
-                  alt={design.title}
+                  src={item.imageUrl}
+                  alt={item.title}
                   fill
-                  className="object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                
-                {/* Top Badge Tag */}
-                {design.tag && (
-                  <span className="absolute top-3 right-3 bg-white/95 text-[#e84e4e] text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md">
-                    {design.tag}
+
+                {/* Top Badge: 20%, New, Sale, Hot */}
+                {item.badge && (
+                  <span
+                    className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full shadow-md z-10 ${
+                      item.badge === "20%" || item.badge === "Sale"
+                        ? "bg-white text-[#ff5252]"
+                        : "bg-[#ff5252] text-white"
+                    }`}
+                  >
+                    {item.badge}
                   </span>
                 )}
 
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
-
-                {/* Bottom Card Content */}
-                <div className="absolute bottom-0 inset-x-0 p-5 text-white space-y-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-white/80 block">
-                    {design.category}
-                  </span>
-                  <h3 className="font-bold text-base font-serif leading-snug text-white group-hover:text-amber-200 transition-colors">
-                    {design.title}
-                  </h3>
-                  <p className="text-xs text-white/80 line-clamp-2 font-light">
-                    {design.description}
-                  </p>
-
-                  {/* View Details Pill Button */}
-                  <div className="pt-2">
-                    <span className="inline-flex items-center gap-1.5 bg-white text-[#e84e4e] text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm group-hover:bg-neutral-100 transition-colors">
+                {/* Card 3 overlay (Short Party Dress representation) */}
+                {isFeaturedCenter ? (
+                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-5 sm:p-6 text-white space-y-1.5 sm:space-y-2 z-10">
+                    <span className="inline-block bg-[#ff5252] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full w-max">
+                      Hot 💰
+                    </span>
+                    <h3 className="font-extrabold text-base sm:text-lg leading-tight text-white">
+                      Short Party Dress
+                    </h3>
+                    <p className="text-[11px] text-white/90 line-clamp-2">
+                      Technical Teffeta Jacquad with jouy Motif
+                    </p>
+                    <p className="font-bold text-base sm:text-lg text-white">
+                      $790.00
+                    </p>
+                    <div className="pt-1">
+                      <span className="inline-block bg-white text-[#ff5252] text-xs font-bold px-5 py-2 rounded-full shadow-md hover:bg-neutral-100 transition-colors">
+                        Add to Cart
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  /* Standard Card Hover Overlay */
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 z-10">
+                    <span className="inline-flex items-center gap-1.5 bg-white text-[#ff5252] text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
                       <Eye className="w-3.5 h-3.5" />
                       <span>View Look</span>
                     </span>
                   </div>
-                </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Modal Dialog for Design Detail (No ecommerce cart / price) */}
-        {selectedDesign && (
+        {/* Modal Dialog for Design Detail */}
+        {selectedProduct && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="relative bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-neutral-100">
+            <div className="relative bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-neutral-100 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
               
               <button
-                onClick={() => setSelectedDesign(null)}
-                className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/50 hover:bg-black text-white flex items-center justify-center transition-colors"
-                aria-label="Close modal"
+                onClick={() => setSelectedProduct(null)}
+                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 flex items-center justify-center transition-colors"
+                aria-label="Close"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                <div className="relative aspect-[3/4] sm:aspect-auto sm:h-full min-h-[300px] bg-neutral-100">
+              <div className="flex flex-col sm:flex-row gap-6 items-center">
+                <div className="relative w-full sm:w-1/2 aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-100 shrink-0">
                   <Image
-                    src={selectedDesign.imageUrl}
-                    alt={selectedDesign.title}
+                    src={selectedProduct.imageUrl}
+                    alt={selectedProduct.title}
                     fill
                     className="object-cover object-top"
                   />
                 </div>
-                <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
-                  <div className="space-y-3">
-                    <span className="inline-block bg-[#ef5350]/10 text-[#ef5350] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      {selectedDesign.category}
-                    </span>
-                    <h3 className="text-2xl font-bold font-serif text-neutral-900 leading-tight">
-                      {selectedDesign.title}
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      {selectedDesign.description}
-                    </p>
-                    <div className="pt-2 text-xs text-neutral-500 space-y-1">
-                      <p>✨ <strong>Style Code:</strong> {selectedDesign.id.toUpperCase()}</p>
-                      <p>✂️ <strong>Tailoring:</strong> Custom measurements & fitting available</p>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-neutral-100 space-y-3">
+                <div className="w-full sm:w-1/2 space-y-4 text-left">
+                  <span className="inline-block bg-[#ffebee] text-[#ff5252] text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Design Showcase
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold font-sans text-neutral-900 leading-tight">
+                    {selectedProduct.title}
+                  </h3>
+                  <p className="text-xs text-neutral-500">
+                    {selectedProduct.materialInfo || "Curated bespoke design piece available for custom tailoring and fitting."}
+                  </p>
+                  
+                  <div className="pt-2">
                     <Link
-                      href={`/appointment?design=${encodeURIComponent(selectedDesign.title)}`}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#e84e4e] hover:bg-[#d83c3c] text-white py-3 px-5 rounded-full font-bold text-sm shadow-md transition-all"
+                      href={`/appointment?design=${encodeURIComponent(selectedProduct.title)}`}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white py-3 px-5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
                     >
                       <Calendar className="w-4 h-4" />
-                      <span>Book Tailoring for this Look</span>
+                      <span>Book Tailoring Appointment</span>
                     </Link>
-                    <button
-                      onClick={() => setSelectedDesign(null)}
-                      className="w-full text-center text-xs text-neutral-500 hover:text-neutral-800 py-1"
-                    >
-                      Close Lookbook
-                    </button>
                   </div>
                 </div>
               </div>
