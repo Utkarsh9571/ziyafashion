@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getAllBlogPosts } from "@/data/blogData";
 import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react";
@@ -20,8 +19,6 @@ export default function BlogListingPage() {
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero Section */}
       <section className="w-full bg-[#ff5252] text-white overflow-hidden relative">
-        <Header />
-
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-10 pb-16 sm:pb-20 lg:pb-24 text-center">
           <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/95 uppercase mb-2">
             EDITORIAL &amp; INSIGHTS

@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import AppointmentFormContent from "./AppointmentForm";
+import AppointmentFormContent from "@/app/appointment/AppointmentForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function AppointmentPage() {
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero */}
       <section className="w-full bg-[#ff5252] text-white">
-        <Header />
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-16 text-center">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
             Book an Appointment

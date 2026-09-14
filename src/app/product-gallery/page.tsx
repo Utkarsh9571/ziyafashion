@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PRODUCT_CATALOGUE_ITEMS, CATALOGUE_BENEFITS } from "@/data/referenceData";
 import { Scissors, Palette, Sparkles, ArrowRight, Calendar, CheckCircle2 } from "lucide-react";
@@ -24,7 +23,6 @@ export default function ProductCataloguePage() {
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* 1. Full-Width Hero */}
       <section className="w-full bg-[#ff5252] text-white">
-        <Header />
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-12 pb-16 sm:pb-20 text-center">
           <span className="text-xs sm:text-sm font-semibold tracking-widest text-white/95 uppercase mb-2 block">
             OUR PRODUCT CATALOGUE

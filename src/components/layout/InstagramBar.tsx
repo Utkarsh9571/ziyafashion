@@ -25,7 +25,7 @@ export default function InstagramBar() {
       {/* Floating Center Badge: "Follow on Instagram" with "Follow ↑" pill on right matching screenshot */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-auto max-w-[90vw]">
         <Link
-          href="https://instagram.com"
+          href="https://www.instagram.com/ziyaadmn?igsh=YXJyZnpuMWdiYnls"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center bg-[#ff5252] text-white pl-4 sm:pl-6 pr-1.5 sm:pr-2 py-1.5 sm:py-2 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 border border-white/20 gap-2 sm:gap-3 whitespace-nowrap"

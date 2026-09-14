@@ -570,8 +570,9 @@ export const VERIFIED_CONTACT_INFO = {
   hoursWeekdays: "Mon - Sat : 12:00 PM – 7:00 PM",
   hoursSunday: "Sunday : Closed",
   socials: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
+    instagram: "https://www.instagram.com/ziyaadmn?igsh=YXJyZnpuMWdiYnls",
+    facebook: "https://www.facebook.com/ziyafashionsingapore/",
+    youtube: "https://www.youtube.com/@MrAnjumjh",
     whatsapp: "https://wa.me/6583636036",
   },
 };

@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "Explore curated fashion designs and book bespoke tailoring appointments with Ziya Fashion.",
 };
 
+import Header from "@/components/layout/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,6 +26,7 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-sans bg-white text-[#212529] selection:bg-[#ff5252] selection:text-white"
         suppressHydrationWarning
       >
+        <Header />
         <main className="flex-1">{children}</main>
       </body>
     </html>

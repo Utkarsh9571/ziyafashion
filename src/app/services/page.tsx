@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactSection from "@/components/common/ContactSection";
 import {
@@ -42,8 +41,6 @@ export default function ServicesPage() {
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* SECTION 1 — HERO */}
       <section className="w-full bg-[#ff5252] text-white overflow-hidden relative">
-        <Header />
-        
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-10 pb-16 sm:pb-20 lg:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             

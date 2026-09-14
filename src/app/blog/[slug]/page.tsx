@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import EnquiryForm from "@/components/common/EnquiryForm";
 import {
@@ -78,11 +77,6 @@ export default async function BlogPostDetailPage({
 
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
-      {/* Header with Top Red Banner */}
-      <section className="w-full bg-[#ff5252] text-white">
-        <Header />
-      </section>
-
       {/* Main Article Container */}
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-16">
         

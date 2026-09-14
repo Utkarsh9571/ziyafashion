@@ -1,18 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, ShoppingBag, Menu, X } from "lucide-react";
-import { NAV_ITEMS } from "@/data/referenceData";
+import { Heart, ShoppingBag, Menu, X, Phone } from "lucide-react";
+import { NAV_ITEMS, VERIFIED_CONTACT_INFO } from "@/data/referenceData";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full bg-transparent text-white z-30">
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+    <header
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#ff5252]/95 backdrop-blur-md shadow-md py-1"
+          : "bg-[#ff5252] py-2 sm:py-2.5"
+      }`}
+    >
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
         
         {/* Logo with Fashion emblem on the left */}
         <Link href="/" className="flex items-center gap-2.5 group shrink-0">
@@ -34,7 +50,7 @@ export default function Header() {
               <div key={item.name} className="relative flex flex-col items-center">
                 <Link
                   href={item.href}
-                  className="hover:opacity-90 transition-opacity drop-shadow-sm py-1"
+                  className="hover:opacity-90 transition-opacity drop-shadow-sm py-1 font-medium"
                 >
                   {item.name}
                 </Link>
@@ -48,9 +64,17 @@ export default function Header() {
 
         {/* Right Action Icons */}
         <div className="flex items-center gap-3 sm:gap-5">
+          <a
+            href={`tel:${VERIFIED_CONTACT_INFO.phone.replace(/\s+/g, "")}`}
+            className="hidden sm:inline-flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/30 transition-all whitespace-nowrap"
+            aria-label="Call Ziya Fashion"
+          >
+            <Phone className="w-3.5 h-3.5" />
+          </a>
+
           <Link
             href="/appointment"
-            className="hidden sm:inline-flex items-center gap-1.5 bg-white text-[#ff5252] text-xs font-bold px-4 py-2 rounded-full shadow-md hover:bg-neutral-100 transition-all whitespace-nowrap"
+            className="hidden md:inline-flex items-center gap-1.5 bg-white text-[#ff5252] text-xs font-bold px-4 py-2 rounded-full shadow-md hover:bg-neutral-100 transition-all whitespace-nowrap"
           >
             <span>Book Appointment</span>
           </Link>
@@ -91,7 +115,7 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <div className="pt-2">
+          <div className="pt-2 space-y-2">
             <Link
               href="/appointment"
               onClick={() => setMobileMenuOpen(false)}
@@ -99,6 +123,12 @@ export default function Header() {
             >
               Book Appointment
             </Link>
+            <a
+              href={`tel:${VERIFIED_CONTACT_INFO.phone.replace(/\s+/g, "")}`}
+              className="block w-full text-center bg-white/20 text-white py-2.5 rounded-full font-bold text-xs border border-white/30"
+            >
+              Call {VERIFIED_CONTACT_INFO.phone}
+            </a>
           </div>
         </div>
       )}

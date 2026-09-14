@@ -2,14 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Header from "../layout/Header";
 
 export default function Hero() {
   return (
     <section className="w-full bg-[#ff5252] text-white overflow-hidden relative">
-      {/* Full-width Top Navigation Header */}
-      <Header />
-
       {/* Internal Constrained Content Container */}
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-10 pb-16 sm:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
