@@ -35,7 +35,7 @@ export default function SummerOfferBanner() {
             {/* White ring frame matching screenshot */}
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full border-4 border-white/60 flex items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=80"
+                src="/images/home/summer-offer-banner.jpg"
                 alt="Summer Sale Female Model"
                 fill
                 className="object-contain"

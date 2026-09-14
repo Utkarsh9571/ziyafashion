@@ -13,7 +13,7 @@ export default function AboutPreview() {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[36px] overflow-hidden shadow-2xl border-4 border-white">
               <Image
-                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80"
+                src="/images/about/atelier-studio.jpg"
                 alt="Ziya Fashion Singapore Craftsmanship"
                 fill
                 className="object-cover object-center hover:scale-105 transition-transform duration-750"

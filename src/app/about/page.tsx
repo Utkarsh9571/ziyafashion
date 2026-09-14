@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-6 relative aspect-[4/3] rounded-[32px] overflow-hidden bg-neutral-100 shadow-md">
             <Image
-              src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80"
+              src="/images/about/about-craftsmanship.jpg"
               alt="Atelier Studio"
               fill
               className="object-cover"

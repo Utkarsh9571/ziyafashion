@@ -19,7 +19,7 @@ export default function ContactSection({
   subtitle = "Have a tailoring requirement, alteration request, or a question about our services? Get in touch with Ziya Fashion.",
   defaultService = "General Tailoring Inquiry",
   bgColor = "bg-[#fcfbf9]",
-  imageSrc = "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+  imageSrc = "/images/contact/contact-atelier.jpg",
 }: ContactSectionProps) {
   return (
     <section id={id} className={`w-full py-16 sm:py-24 ${bgColor} border-t border-neutral-200/70`}>

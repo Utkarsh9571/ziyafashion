@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/layout/Footer";
 import ContactSection from "@/components/common/ContactSection";
+import ServiceSelectDropdown from "@/components/common/ServiceSelectDropdown";
 import {
   DETAILED_SERVICES,
   TRADITIONAL_WEAR_ITEMS,
@@ -16,6 +17,7 @@ import {
   Palette,
   Heart,
   ArrowRight,
+  ChevronDown,
   CheckCircle2,
   Calendar,
   Phone,
@@ -40,50 +42,111 @@ export default function ServicesPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* SECTION 1 — HERO */}
-      <section className="w-full bg-[#ff5252] text-white overflow-hidden relative">
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-10 pb-16 sm:pb-20 lg:pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff5252] text-white flex flex-col justify-end relative overflow-hidden">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-12 lg:pt-6 pb-0 h-full flex flex-col justify-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-end h-full">
             
             {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-6 text-left z-10">
+            <div className="lg:col-span-7 space-y-5 text-left z-10 py-6 sm:py-10 lg:py-12 flex flex-col justify-center">
               <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/95 uppercase">
                 OUR SERVICES
               </p>
-              <h1 className="text-3xl sm:text-5xl md:text-[50px] lg:text-[56px] font-extrabold tracking-tight leading-[1.1] text-white">
+              <h1 className="text-3xl sm:text-5xl md:text-[50px] lg:text-[56px] font-extrabold tracking-tight leading-[1.08] text-white">
                 Tailoring Made Around You
               </h1>
               <p className="text-xs sm:text-sm md:text-base text-white/95 font-medium max-w-xl leading-relaxed">
                 From bespoke garments and traditional wear to bridal outfits and professional alterations, our tailoring services are designed around your measurements, style and occasion.
               </p>
-              <div className="pt-2 flex flex-wrap gap-4">
+
+              {/* 1. CTA Buttons Row + Pill Dropdown */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <a
                   href="#services-list"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap"
                 >
                   <span>EXPLORE OUR SERVICES</span>
                   <ArrowRight className="w-4 h-4 text-[#ff5252]" />
                 </a>
+
+                {/* Compact Pill-shaped Dropdown next to primary CTA */}
+                <ServiceSelectDropdown />
+
                 <Link
                   href="/appointment"
-                  className="inline-flex items-center justify-center bg-white/20 hover:bg-white/30 text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm border border-white/30 transition-all uppercase tracking-wider"
+                  className="inline-flex items-center justify-center bg-white/20 hover:bg-white/30 text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm border border-white/30 transition-all uppercase tracking-wider whitespace-nowrap"
                 >
                   <span>BOOK AN APPOINTMENT</span>
                 </Link>
               </div>
+
+              {/* 2. "Our Happy Customers" Trust Strip: 3 overlapping avatars + star rating line */}
+              <div className="pt-2 flex items-center gap-3.5">
+                <div className="flex -space-x-2.5 shrink-0">
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image
+                      src="/images/home/hero-avatar-1.jpg"
+                      alt="Client"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image
+                      src="/images/home/hero-avatar-2.jpg"
+                      alt="Client"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image
+                      src="/images/home/hero-avatar-3.jpg"
+                      alt="Client"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="text-xs text-white/95 font-medium flex items-center gap-2">
+                  <span className="font-bold">Our Happy Customers</span>
+                  <span className="text-white/60">•</span>
+                  <span className="text-yellow-300 font-semibold tracking-tighter">★★★★★</span>
+                  <span className="font-semibold">4.9 (500+ Tailored Creations)</span>
+                </div>
+              </div>
+
+              {/* 3. One-line Prompt */}
+              <div className="text-xs sm:text-sm text-white/95 font-medium pt-1">
+                <span>First time here? </span>
+                <Link
+                  href="/appointment"
+                  className="font-bold underline underline-offset-4 text-white hover:text-white/80 transition-colors"
+                >
+                  Book a Free Consultation
+                </Link>
+              </div>
+
             </div>
 
-            {/* Right Hero Image */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-center mt-4 lg:mt-0">
-              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] rounded-full bg-[#ff7676] overflow-hidden flex items-end justify-center shadow-2xl">
+            {/* Right Hero: Large Circle Backdrop (NOT a clip mask) + Overflowing Tailoring Photo bleeding to bottom edge */}
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-end h-full w-full min-h-[340px] sm:min-h-[440px] md:min-h-[500px] lg:min-h-[560px] xl:min-h-[620px]">
+              
+              {/* 1. Backdrop Circle: Flat, slightly lighter tint (~85-90% height), pure backdrop behind photo */}
+              <div className="absolute top-1/2 left-1/2 lg:left-auto lg:right-2 xl:right-6 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] lg:w-[480px] lg:h-[480px] xl:w-[540px] xl:h-[540px] 2xl:w-[580px] 2xl:h-[580px] rounded-full bg-[#ff7676] shadow-xl z-0 pointer-events-none" />
+
+              {/* 2. Photo in front of circle, breaking the circle's outline and bleeding straight through bottom edge */}
+              <div className="relative z-10 w-[290px] h-[340px] sm:w-[380px] sm:h-[440px] md:w-[440px] md:h-[500px] lg:w-[480px] lg:h-[560px] xl:w-[540px] xl:h-[620px] flex items-end justify-center">
                 <Image
-                  src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=800&q=85"
-                  alt="Ziya Fashion Tailoring Services"
+                  src="/images/services/hero-cutout-reference-model.png"
+                  alt="Ziya Fashion Tailoring Services Craftsmanship"
                   fill
                   priority
-                  className="object-cover object-center hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 768px) 90vw, 40vw"
+                  className="object-contain object-bottom drop-shadow-2xl hover:scale-105 transition-transform duration-700 select-none"
+                  sizes="(max-width: 768px) 90vw, 45vw"
                 />
               </div>
+
             </div>
 
           </div>
@@ -177,7 +240,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg bg-neutral-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80"
+                  src="/images/services/services-banner-2.jpg"
                   alt="Indian & Malay Traditional Tailoring"
                   fill
                   className="object-cover object-center"
@@ -304,7 +367,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-5 relative order-1 lg:order-2">
               <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg bg-neutral-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=800&q=80"
+                  src="/images/services/services-banner-3.jpg"
                   alt="Tailoring Alterations & Fitting Service"
                   fill
                   className="object-cover object-center"

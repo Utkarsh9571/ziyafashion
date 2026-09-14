@@ -45,7 +45,7 @@ export default function BrandBanner() {
 
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
+                src="/images/home/brand-banner-craftsman.jpg"
                 alt="Ziya Fashion Bespoke Tailoring"
                 fill
                 className="object-contain"

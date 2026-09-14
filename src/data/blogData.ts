@@ -26,7 +26,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Discover the dedication, precision measurements, and bespoke craftsmanship that transform fine fabrics into a truly personal garment.",
     featuredImage:
-      "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=1200&q=80",
+      "/images/blog/the-art-of-tailoring.jpg",
     date: "12 May 2026",
     category: "Tailoring Craft",
     readTime: "4 min read",
@@ -61,7 +61,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "A thoughtful guide to building a timeless wardrobe through tailored essentials, versatile cuts, and fabrics designed to endure.",
     featuredImage:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=80",
+      "/images/blog/style-that-lasts.jpg",
     date: "28 April 2026",
     category: "Style & Wardrobe",
     readTime: "3 min read",
@@ -96,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Explore how tailored design balances ease of movement, breathable textiles, and sophisticated aesthetics for everyday and festive wear.",
     featuredImage:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
+      "/images/blog/a-guide-to-comfort-style.jpg",
     date: "15 April 2026",
     category: "Tailoring Insights",
     readTime: "4 min read",

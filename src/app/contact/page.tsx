@@ -39,7 +39,7 @@ export default function ContactPage() {
             {/* Atelier Visual Card */}
             <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/9] rounded-[28px] overflow-hidden bg-neutral-900 shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=1000&q=80"
+                src="/images/contact/boutique-location.jpg"
                 alt="Ziya Fashion Boutique Studio"
                 fill
                 className="object-cover object-center opacity-85 hover:scale-105 transition-transform duration-700"

@@ -50,7 +50,7 @@ export default function AppointmentCTA() {
             <div className="lg:col-span-4 flex justify-center lg:justify-end">
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border-4 border-white/30 overflow-hidden shadow-2xl bg-white/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=700&q=80"
+                  src="/images/home/appointment-cta.jpg"
                   alt="Ziya Fashion Singapore Bespoke Fitting"
                   fill
                   className="object-cover object-top hover:scale-105 transition-transform duration-700"
