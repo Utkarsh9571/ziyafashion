@@ -42,9 +42,9 @@ export default function ServicesPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* SECTION 1 — HERO */}
-      <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff5252] text-white flex flex-col justify-end relative overflow-hidden">
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pb-0 h-full flex flex-col justify-end">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-end h-full">
+      <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff5252] text-white flex flex-col justify-center relative overflow-hidden">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-full flex flex-col justify-center py-6 sm:py-8 lg:py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-5 text-left z-10 py-6 sm:py-10 lg:py-12 flex flex-col justify-center">

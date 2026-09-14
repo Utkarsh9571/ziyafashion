@@ -8,10 +8,10 @@ import ServiceSelectDropdown from "@/components/common/ServiceSelectDropdown";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-gradient-to-r from-[#ff4d4d] via-[#ff5858] to-[#ff4d4d] text-white flex flex-col justify-end relative mt-0 overflow-hidden">
+    <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-gradient-to-r from-[#ff4d4d] via-[#ff5858] to-[#ff4d4d] text-white flex flex-col justify-center relative mt-0 overflow-hidden">
       {/* Constrained Content Container */}
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pb-0 h-full flex flex-col justify-end">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-end">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-full flex flex-col justify-center py-6 sm:py-8 lg:py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
           
           {/* Left Column: Typography, Interactive Bar & Social Proof */}
           <div className="lg:col-span-6 xl:col-span-6 space-y-6 sm:space-y-7 text-left z-10 flex flex-col justify-center py-8 sm:py-12 lg:py-14">
