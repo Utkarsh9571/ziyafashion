@@ -79,17 +79,6 @@ export default function Header() {
             <span>Book Appointment</span>
           </Link>
 
-          <Link href="/product-gallery/" className="relative text-white hover:opacity-80 transition-opacity p-1.5" aria-label="Favorites">
-            <Heart className="w-5 h-5 stroke-[1.8]" />
-            <span className="absolute 0 top-0.5 right-0 bg-[#fef08a] text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-              0
-            </span>
-          </Link>
-
-          <Link href="/appointment" className="text-white hover:opacity-80 transition-opacity p-1.5" aria-label="Atelier">
-            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
-          </Link>
-
           {/* Mobile hamburger toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
