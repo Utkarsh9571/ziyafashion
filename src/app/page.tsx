@@ -1,42 +1,51 @@
 import Hero from "@/components/home/Hero";
 import CollectionShades from "@/components/home/CollectionShades";
 import DesignGallery from "@/components/home/DesignGallery";
-import PromoWinterBanner from "@/components/home/PromoWinterBanner";
+import BrandBanner from "@/components/home/BrandBanner";
+import ServicesSection from "@/components/home/ServicesSection";
 import FeaturedDesigns from "@/components/home/FeaturedDesigns";
+import AboutPreview from "@/components/home/AboutPreview";
+import AppointmentCTA from "@/components/home/AppointmentCTA";
 import Testimonials from "@/components/home/Testimonials";
-import SummerOfferBanner from "@/components/home/SummerOfferBanner";
 import Newsletter from "@/components/home/Newsletter";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* 1. Large Rounded Hero with Overlay Header */}
+      {/* 1. Hero: Singapore's Destination for Bespoke Tailoring & Timeless Style */}
       <Hero />
 
-      {/* 2. Premium Shades (4 Horizontal Rounded Capsule Cards) */}
+      {/* 2. Explore Ziya Fashion (Women / Men / Kids / Bespoke) */}
       <CollectionShades />
 
-      {/* 3. Category Icons Row & 4. 8-Card Fashion Grid */}
+      {/* 3. Our Collections (Indo-Western / Pakistani / Signature) */}
       <DesignGallery />
 
-      {/* 5. Promotional Winter Sale Banner (70% - 80% with Circle Graphics) */}
-      <PromoWinterBanner />
+      {/* 4. Brand Positioning (Crafted Around You) */}
+      <BrandBanner />
 
-      {/* 6. Trending a Top Sale (4 Spotlight Cards + Number Indicator) */}
+      {/* 5. Tailoring Services (Alterations, Women's, Bridal, Indian & Malay) */}
+      <ServicesSection />
+
+      {/* 6. Designed for Every Occasion / Styles */}
       <FeaturedDesigns />
 
-      {/* 7. What Our Customers Say (3 Cards with Avatars & Red Name Badges) */}
+      {/* 7. About Ziya Fashion (Where Your Vision Becomes Your Perfect Fit) */}
+      <AboutPreview />
+
+      {/* 8. Appointment CTA (Ready to Create Something Made for You?) */}
+      <AppointmentCTA />
+
+      {/* 9. Customer Feedback (What Our Customers Say) */}
       <Testimonials />
 
-      {/* 8. Promotional Summer Sale Banner (90% Offer with Ring Graphics) */}
-      <SummerOfferBanner />
-
-      {/* 9. Subscribe to Our Newsletter (Capsule Field) */}
+      {/* 10. Newsletter (Stay Connected with Ziya Fashion) */}
       <Newsletter />
 
-      {/* 10. Instagram 5-Photo Strip & 11. Dark Multi-column Footer */}
+      {/* Footer with Instagram Strip and Verified Contact Info */}
       <Footer />
     </div>
   );
 }
+

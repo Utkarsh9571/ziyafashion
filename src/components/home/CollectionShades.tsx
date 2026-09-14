@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { PREMIUM_SHADES_DATA } from "@/data/referenceData";
+import { AUDIENCE_QUICK_LINKS } from "@/data/referenceData";
 
 export default function CollectionShades() {
   return (
@@ -11,7 +11,7 @@ export default function CollectionShades() {
         {/* Centered Heading with reference divider */}
         <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
-            Premium Shades
+            Explore Ziya Fashion
           </h2>
           <div className="ref-divider">
             <span className="ref-dot" />
@@ -20,16 +20,16 @@ export default function CollectionShades() {
           </div>
         </div>
 
-        {/* 4 Capsule Rounded Cards matching reference layout (responsive 1 col mobile, 2 col tablet, 4 col desktop) */}
+        {/* 4 Capsule Cards: Women, Men, Kids, Bespoke */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {PREMIUM_SHADES_DATA.map((item) => (
+          {AUDIENCE_QUICK_LINKS.map((item) => (
             <div
               key={item.id}
               className={`group relative h-28 sm:h-32 rounded-full overflow-hidden ${item.bgClass} flex items-center justify-between px-5 sm:px-6 shadow-sm hover:shadow-lg transition-all duration-300`}
             >
               {/* Left text & button */}
               <div className="z-10 max-w-[58%] space-y-1.5 sm:space-y-2 text-left">
-                <h3 className="font-bold text-sm sm:text-base leading-tight drop-shadow-sm">
+                <h3 className="font-bold text-base sm:text-lg leading-tight drop-shadow-sm">
                   {item.title}
                 </h3>
                 <Link
@@ -40,7 +40,7 @@ export default function CollectionShades() {
                 </Link>
               </div>
 
-              {/* Right Model cutout image */}
+              {/* Right Model image */}
               <div className="absolute right-0 top-0 bottom-0 w-[45%] overflow-hidden pointer-events-none">
                 <Image
                   src={item.modelImage}

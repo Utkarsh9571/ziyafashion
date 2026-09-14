@@ -21,7 +21,7 @@ export default function Newsletter() {
         
         {/* Header */}
         <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
-          Subscribe to Our Newsletter
+          Stay Connected with Ziya Fashion
         </h2>
         <div className="ref-divider">
           <span className="ref-dot" />
@@ -29,9 +29,8 @@ export default function Newsletter() {
           <span className="ref-dot" />
         </div>
 
-        {/* Latin paragraph matching reference */}
         <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+          Keep up with our latest designs, collections and tailoring updates.
         </p>
 
         {/* Capsule Input Bar with Jeans texture effect and cream SUBSCRIBE button */}

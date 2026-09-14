@@ -8,11 +8,14 @@ export default function Testimonials() {
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Section Heading */}
-        <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
-            What Our Customers Say
+        <div className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight uppercase">
+            WHAT OUR CUSTOMERS SAY
           </h2>
-          <div className="ref-divider">
+          <p className="text-neutral-600 text-sm sm:text-base mt-2 font-medium">
+            We&apos;re proud to create beautifully tailored pieces and experiences for our customers.
+          </p>
+          <div className="ref-divider mt-3">
             <span className="ref-dot" />
             <span className="ref-dot-lg" />
             <span className="ref-dot" />

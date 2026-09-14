@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Scissors, Sparkles, Maximize2, Palette, ArrowRight } from "lucide-react";
-import { SERVICES_DATA } from "@/data/siteData";
+import { TAILORING_SERVICES } from "@/data/referenceData";
 
 const iconMap = {
   Scissors: Scissors,
@@ -13,27 +13,30 @@ const iconMap = {
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden" id="services-section">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#e84e4e] font-serif tracking-tight">
-            Our Atelier Services
+        {/* Section Eyebrow, Heading & Description */}
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+            WHAT WE DO
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
+            Tailoring Services Designed Around You
           </h2>
-          <div className="ornate-divider">
-            <span className="ornate-dot" />
-            <span className="ornate-dot-center" />
-            <span className="ornate-dot" />
+          <div className="ref-divider">
+            <span className="ref-dot" />
+            <span className="ref-dot-lg" />
+            <span className="ref-dot" />
           </div>
-          <p className="text-neutral-500 text-sm max-w-xl mx-auto">
-            Experience bespoke craftsmanship tailored to your individual style, from custom couture design to precision alterations.
+          <p className="text-xs sm:text-sm md:text-base text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+            From bespoke tailoring and bridal outfits to traditional wear and professional alterations, our services are tailored to your measurements, style and occasion.
           </p>
         </div>
 
-        {/* 4-Service Editorial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SERVICES_DATA.map((service) => {
+        {/* 4 Tailoring Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {TAILORING_SERVICES.map((service) => {
             const IconComponent = iconMap[service.iconName as keyof typeof iconMap] || Sparkles;
             
             return (
@@ -49,32 +52,29 @@ export default function ServicesSection() {
                       alt={service.title}
                       fill
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-[#e84e4e] flex items-center justify-center shadow-md">
+                    <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm text-[#ff5252] flex items-center justify-center shadow-md">
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Service Text Body */}
-                  <div className="p-6 space-y-3">
-                    <h3 className="font-serif font-bold text-xl text-neutral-900 group-hover:text-[#e84e4e] transition-colors">
+                  <div className="p-5 sm:p-6 space-y-2.5">
+                    <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff5252] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#e84e4e] uppercase tracking-wider">
-                      {service.tagline}
-                    </p>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
                       {service.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Card Action Link */}
-                <div className="p-6 pt-0">
+                <div className="p-5 sm:p-6 pt-0">
                   <Link
                     href={`/appointment?service=${encodeURIComponent(service.title)}`}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#e84e4e] hover:text-[#d83c3c] group-hover:translate-x-1 transition-all"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
                   >
                     <span>Book Service</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -86,10 +86,10 @@ export default function ServicesSection() {
         </div>
 
         {/* View All Services Footer Link */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-neutral-900 text-white hover:bg-[#e84e4e] px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
+            className="inline-flex items-center gap-2 bg-[#212529] hover:bg-[#ff5252] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
           >
             <span>Explore All Atelier Services</span>
             <ArrowRight className="w-4 h-4" />
