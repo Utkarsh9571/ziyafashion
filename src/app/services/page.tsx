@@ -43,7 +43,7 @@ export default function ServicesPage() {
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* SECTION 1 — HERO */}
       <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff5252] text-white flex flex-col justify-end relative overflow-hidden">
-        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-12 lg:pt-6 pb-0 h-full flex flex-col justify-end">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pb-0 h-full flex flex-col justify-end">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-end h-full">
             
             {/* Left Hero Content */}

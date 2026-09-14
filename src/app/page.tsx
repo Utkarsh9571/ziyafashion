@@ -14,7 +14,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white" suppressHydrationWarning>
       {/* 1. Hero: Singapore's Destination for Bespoke Tailoring & Timeless Style */}
       <Hero />
 
@@ -51,8 +51,8 @@ export default function Home() {
         subtitle="Have a tailoring requirement, alteration request, or a question about our services? Get in touch with Ziya Fashion."
       />
 
-      {/* 12. Newsletter (Stay Connected with Ziya Fashion) */}
-      <Newsletter />
+      {/* 12. Newsletter (Stay Connected with Ziya Fashion) 
+      <Newsletter />*/}
 
       {/* Footer with Instagram Strip and Verified Contact Info */}
       <Footer />

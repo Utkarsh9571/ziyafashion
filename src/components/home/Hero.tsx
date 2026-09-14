@@ -8,9 +8,9 @@ import ServiceSelectDropdown from "@/components/common/ServiceSelectDropdown";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-gradient-to-r from-[#ff4d4d] via-[#ff5858] to-[#ff4d4d] text-white flex flex-col justify-end relative overflow-hidden">
+    <section className="w-full min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-gradient-to-r from-[#ff4d4d] via-[#ff5858] to-[#ff4d4d] text-white flex flex-col justify-end relative mt-0 overflow-hidden">
       {/* Constrained Content Container */}
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-12 lg:pt-6 pb-0 h-full flex flex-col justify-end">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pb-0 h-full flex flex-col justify-end">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-end">
           
           {/* Left Column: Typography, Interactive Bar & Social Proof */}

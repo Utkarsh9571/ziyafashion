@@ -145,8 +145,8 @@ export default function Footer() {
             Bespoke Tailoring &amp; Custom Fashion in Singapore
           </div>
 
-          <p className="text-center sm:text-right">
-            © {new Date().getFullYear()} Ziya Fashion. All rights reserved.
+          <p className="text-center sm:text-right" suppressHydrationWarning>
+            © 2026 Ziya Fashion. All rights reserved.
           </p>
         </div>
       </div>

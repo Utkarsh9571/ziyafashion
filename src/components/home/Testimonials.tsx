@@ -4,62 +4,62 @@ import { REFERENCE_TESTIMONIALS } from "@/data/referenceData";
 
 export default function Testimonials() {
   return (
-    <section className="w-full py-12 sm:py-16 bg-white overflow-hidden">
+    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f5f0] overflow-hidden border-t border-neutral-200/50">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Section Heading */}
-        <div className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight uppercase">
+        <div className="text-center mb-10 sm:mb-14 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#ff5252] tracking-tight uppercase">
             WHAT OUR CUSTOMERS SAY
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base mt-2 font-medium">
+          <p className="text-neutral-600 text-sm sm:text-base mt-2.5 font-medium">
             We&apos;re proud to create beautifully tailored pieces and experiences for our customers.
           </p>
-          <div className="ref-divider mt-3">
+          <div className="ref-divider mt-3.5">
             <span className="ref-dot" />
             <span className="ref-dot-lg" />
             <span className="ref-dot" />
           </div>
         </div>
 
-        {/* 3 Review Cards matching Screenshot 090104.png (1 col on mobile, 2 col on tablet, 3 col on desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 3 Review Cards matching Reference Layout with compact, proportionate size */}
+        <div className="max-w-4xl lg:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {REFERENCE_TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="bg-[#f4f4f4] rounded-[34px] p-5 sm:p-6 shadow-sm border border-neutral-100 flex flex-col justify-between"
+              className="flex flex-col justify-between h-full group"
             >
-              <div className="flex items-start gap-3 sm:gap-4">
-                {/* Square Avatar with warm background badge */}
-                <div className="relative w-16 sm:w-20 h-20 sm:h-24 rounded-2xl overflow-hidden bg-neutral-200 shrink-0 border border-neutral-300">
+              <div>
+                {/* 1. Customer Image (Compact balanced portrait aspect) */}
+                <div className="relative w-full aspect-[4/5] max-w-[240px] sm:max-w-[260px] lg:max-w-[280px] mx-auto rounded-xl sm:rounded-2xl overflow-hidden shadow-sm bg-neutral-200 border border-neutral-300/60">
                   <Image
                     src={item.imageUrl}
                     alt={item.name}
                     fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 25vw, 15vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 260px, 280px"
                   />
                 </div>
 
-                {/* Review details */}
-                <div className="space-y-1.5 flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold text-neutral-800 uppercase tracking-wide truncate">
-                      {item.role}
-                    </span>
-                    <span className="w-6 sm:w-8 h-[1px] bg-neutral-400 shrink-0" />
-                  </div>
-                  
-                  <p className="text-[11px] text-neutral-600 leading-relaxed line-clamp-4">
-                    • {item.text}
-                  </p>
+                {/* 2. 5 Star Gold Rating */}
+                <div className="flex justify-center items-center gap-1 text-[#eab308] text-xs sm:text-sm mt-3.5 mb-2 select-none">
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
                 </div>
+
+                {/* 3. Testimonial Quote Text */}
+                <p className="text-center text-xs sm:text-[12.5px] text-neutral-600 italic leading-relaxed px-2 font-normal max-w-[300px] mx-auto">
+                  &ldquo;{item.text}&rdquo;
+                </p>
               </div>
 
-              {/* Red pill with client name & location at the bottom */}
-              <div className="mt-4 pt-2 flex justify-start">
-                <span className="inline-block bg-[#ff5252] text-white text-[10px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider">
-                  {item.location ? `${item.name}, ${item.location}` : item.name}
+              {/* 4. Customer Location / Attribution */}
+              <div className="mt-3.5 text-center">
+                <span className="inline-block text-sm sm:text-base font-serif text-[#2f4858] font-medium tracking-normal">
+                  — {item.name}, {item.location}
                 </span>
               </div>
             </div>
@@ -67,10 +67,10 @@ export default function Testimonials() {
         </div>
 
         {/* Carousel pagination indicator dots */}
-        <div className="flex items-center justify-center gap-1.5 mt-8">
-          <span className="w-2 h-2 rounded-full bg-neutral-300" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5252]" />
-          <span className="w-2 h-2 rounded-full bg-neutral-300" />
+        <div className="flex items-center justify-center gap-2 mt-12 sm:mt-14">
+          <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+          <span className="w-3 h-3 rounded-full bg-[#ff5252]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
         </div>
 
       </div>
