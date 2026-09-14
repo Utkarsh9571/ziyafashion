@@ -7,10 +7,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { name: "Blog", href: "/blog" },
   { name: "Our Services", href: "/services" },
   { name: "Product Catalogue", href: "/product-gallery/" },
   { name: "About Us", href: "/about" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
