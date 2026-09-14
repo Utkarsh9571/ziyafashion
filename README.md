@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ziya Fashion — Bespoke Tailoring & Fashion Boutique (Singapore)
 
-## Getting Started
+A modern, high-performance web application for **Ziya Fashion**, Singapore's premier destination for custom tailoring, bridal & wedding couture, traditional Indian & Malay garments, and precision alterations.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🏛️ Brand & Business Details
+
+- **Location**: 02-18 Golden Landmark, 390 Victoria Street, Singapore 188061
+- **Phone / WhatsApp**: [+65 8363 6036](https://wa.me/6583636036)
+- **Email**: [admin@ziyafashion.net](mailto:admin@ziyafashion.net)
+- **Hours**: Monday – Saturday: 12:00 PM – 7:00 PM | Sunday: Closed
+
+---
+
+## ⚡ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router, React Server Components)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Typography**: Inter & Outfit font system
+
+---
+
+## 🌐 Website Architecture & Routes
+
+| Route | Purpose | Features |
+| :--- | :--- | :--- |
+| `/` | **Homepage** | Hero showcase, audience links, collection highlights, 4-card services preview, brand story, editorial journal preview, client testimonials, and unified enquiry form. |
+| `/services` | **Our Services** | Comprehensive breakdown of 8 tailoring categories, Indian & Malay traditional wear, alteration services, 4-step tailoring process, and booking CTAs. |
+| `/product-gallery/` | **Product Catalogue** | Garment catalogue featuring 12 tailored styles (Bridal Lehenga, Gents Suit, Baju Kahwin, Jubah, Saree, Pathani, etc.) and craftsmanship benefits. |
+| `/blog` | **The Ziya Journal** | Editorial blog listing with 3-column responsive card grid, date stamps, category tags, and excerpts. |
+| `/blog/[slug]` | **Journal Article Detail** | Dedicated editorial layouts with reading time, pullquotes, unified contact form, and dynamic interconnected related stories. |
+| `/appointment` | **Appointment Booking** | Interactive multi-step consultation and fitting reservation form with date/time selection. |
+| `/contact` | **Contact & Studio** | Verified boutique location details, operating hours, direct phone/WhatsApp links, and inquiry form. |
+| `/about` | **About Ziya Fashion** | Atelier history, philosophy, craftsmanship standards, and boutique information. |
+
+### Legacy Route Compatibility Redirects
+- `/charity-nonprofit-landing-page/` ➔ Redirects to `/services`
+- `/designs/` ➔ Redirects to `/product-gallery/`
+- `/the-art-of-tailoring/` ➔ Redirects to `/blog/the-art-of-tailoring`
+- `/style-that-lasts/` ➔ Redirects to `/blog/style-that-lasts`
+- `/a-guide-to-comfort-style/` ➔ Redirects to `/blog/a-guide-to-comfort-style`
+
+---
+
+## 📂 Project Structure
+
+```
+ziya-fashion/
+├── src/
+│   ├── app/                               # Next.js App Router Pages
+│   │   ├── about/                         # About Us Page
+│   │   ├── appointment/                   # Appointment Booking Page & Form
+│   │   ├── blog/                          # The Ziya Journal
+│   │   │   ├── [slug]/                    # Dynamic Blog Detail Pages
+│   │   │   └── page.tsx                   # Blog Listing Page
+│   │   ├── contact/                       # Contact & Boutique Info Page
+│   │   ├── product-gallery/               # Garment Catalogue Page
+│   │   ├── services/                      # Tailoring Services Page
+│   │   ├── layout.tsx                     # Global Root Layout
+│   │   └── page.tsx                       # Homepage
+│   ├── components/
+│   │   ├── common/                        # Reusable Components (EnquiryForm, ContactSection)
+│   │   ├── home/                          # Homepage Section Components (Hero, Services, Journal, etc.)
+│   │   └── layout/                        # Header, Footer, Navigation, Instagram Bar
+│   └── data/
+│       ├── blogData.ts                    # Blog Posts Data & Query Helpers
+│       ├── referenceData.ts               # Centralized Business Info, Services & Collections
+│       └── siteData.ts                    # General Site Configuration
+├── public/                                # Static Assets
+├── .gitignore                             # Git Ignore Rules
+├── next.config.ts                         # Next.js Configuration
+├── package.json                           # Dependencies & Scripts
+├── tailwind.config.ts                     # Tailwind CSS Configuration
+└── tsconfig.json                          # TypeScript Configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18.18+ (or Node.js 20+)
+- npm, yarn, pnpm, or bun
 
-## Learn More
+### 1. Clone & Install Dependencies
+```bash
+git clone https://github.com/Utkarsh9571/ziyafashion.git
+cd ziya-fashion
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Build for Production
+```bash
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License & Attribution
+© 2026 Ziya Fashion. All rights reserved.
+Bespoke Tailoring & Custom Fashion in Singapore.
