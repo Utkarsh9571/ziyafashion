@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import InstagramBar from "./InstagramBar";
 import { VERIFIED_CONTACT_INFO } from "@/data/referenceData";
@@ -15,14 +16,15 @@ export default function Footer() {
           
           {/* Column 1: Brand Logo + Description + Social Media Links */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2.5">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-[#ff7d86]">
-                <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
-              </svg>
-              <span className="font-extrabold text-2xl sm:text-3xl tracking-tight text-[#ff7d86]">
-                Ziya Fashion
-              </span>
-            </div>
+            <Link href="/" className="inline-block group" aria-label="Ziya Fashion Home">
+              <Image
+                src="/images/logo/logo.png"
+                alt="Ziya Fashion"
+                width={170}
+                height={70}
+                className="h-11 sm:h-12 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105 shadow-sm"
+              />
+            </Link>
 
             <p className="text-sm sm:text-[15px] text-neutral-200 leading-relaxed font-normal">
               Singapore&apos;s destination for bespoke tailoring, traditional Indian &amp; Malay attire, bridal couture, and professional alterations. Crafted around your unique measurements.

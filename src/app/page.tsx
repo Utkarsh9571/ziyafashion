@@ -24,11 +24,8 @@ export default function Home() {
       {/* 3. Our Collections (Indo-Western / Pakistani / Signature) */}
       <DesignGallery />
 
-      {/* 4. Brand Positioning (Crafted Around You) */}
-      <BrandBanner />
-
-      {/* 5. Tailoring Services (Bespoke, Bridal, Traditional, Alterations) */}
-      <ServicesSection />
+      {/* 5. Tailoring Services (Bespoke, Bridal, Traditional, Alterations) 
+      <ServicesSection />*/}
 
       {/* 6. Designed for Every Occasion / Styles */}
       <FeaturedDesigns />
@@ -36,20 +33,22 @@ export default function Home() {
       {/* 7. About Ziya Fashion (Where Your Vision Becomes Your Perfect Fit) */}
       <AboutPreview />
 
-      {/* 8. The Ziya Journal (Blog Preview) */}
-      <HomeBlogSection />
+      {/* 8. The Ziya Journal (Blog Preview)
+      <HomeBlogSection /> */}
 
-      {/* 9. Appointment CTA (Ready to Create Something Made for You?) */}
-      <AppointmentCTA />
+      
 
-      {/* 10. Customer Feedback (What Our Customers Say) */}
+      {/* 9. Customer Feedback (What Our Customers Say) */}
       <Testimonials />
 
-      {/* 11. Reusable Contact Section (Let's Create Something That Fits You) */}
+      {/* 10. Reusable Contact Section (Let's Create Something That Fits You) */}
       <ContactSection
         title="Let's Create Something That Fits You"
         subtitle="Have a tailoring requirement, alteration request, or a question about our services? Get in touch with Ziya Fashion."
       />
+
+      {/* 11. Appointment CTA (Ready to Create Something Made for You?) */}
+      <AppointmentCTA />
 
       {/* 12. Newsletter (Stay Connected with Ziya Fashion) 
       <Newsletter />*/}

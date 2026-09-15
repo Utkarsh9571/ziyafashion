@@ -9,8 +9,9 @@
 export const IMAGE_ASSETS = {
   // Brand & Favicon
   logo: {
-    svg: "/images/logo/ziya-fashion-logo.svg",
-    png: "/images/logo/ziya-fashion-logo.png",
+    white: "/images/logo/logo-white.png",
+    coral: "/images/logo/logo-coral.png",
+    original: "/images/logo/logo.png",
   },
   favicon: {
     ico: "/images/favicon/favicon.ico",

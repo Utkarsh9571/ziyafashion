@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Heart, ShoppingBag, Menu, X, Phone } from "lucide-react";
 import { NAV_ITEMS, VERIFIED_CONTACT_INFO } from "@/data/referenceData";
@@ -30,16 +31,16 @@ export default function Header() {
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
         
-        {/* Logo with Fashion emblem on the left */}
-        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="w-7 h-7 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-white drop-shadow-sm">
-              <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
-            </svg>
-          </div>
-          <span className="font-bold text-xl sm:text-2xl tracking-tight font-sans text-white drop-shadow-sm whitespace-nowrap">
-            Ziya Fashion
-          </span>
+        {/* Authentic Brand Logo with original black background */}
+        <Link href="/" className="flex items-center group shrink-0 py-1" aria-label="Ziya Fashion Home">
+          <Image
+            src="/images/logo/logo.png"
+            alt="Ziya Fashion"
+            width={160}
+            height={66}
+            className="h-10 sm:h-12 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105 shadow-sm"
+            priority
+          />
         </Link>
 
         {/* Center Navigation links */}

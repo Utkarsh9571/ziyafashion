@@ -22,8 +22,8 @@ export default function Hero() {
             </p>
 
             {/* Main Heading */}
-            <h1 className="text-3xl sm:text-5xl md:text-[52px] lg:text-[54px] xl:text-[64px] font-extrabold tracking-tight leading-[1.08] text-white">
-              Stylish Female &amp; Custom Clothes
+            <h1 className="text-3xl sm:text-5xl md:text-[50px] lg:text-[52px] xl:text-[58px] font-extrabold tracking-tight leading-[1.12] text-white">
+              Singapore’s Destination for Bespoke Tailoring &amp; Timeless Style
             </h1>
 
             {/* Supporting Text */}

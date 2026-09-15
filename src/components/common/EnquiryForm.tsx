@@ -1,8 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Send, Phone, Mail, MessageCircle, AlertCircle } from "lucide-react";
+import { CheckCircle2, Send, Phone, Mail, MessageCircle, AlertCircle, Calendar, Clock, User } from "lucide-react";
 import { VERIFIED_CONTACT_INFO } from "@/data/referenceData";
+import {
+  COUNTRY_PHONE_RULES,
+  isValidName,
+  sanitizeNameInput,
+  isValidEmail,
+  sanitizePhoneDigits,
+} from "@/utils/validation";
+import { submitLeadToGoogleSheet } from "@/services/leadService";
 
 interface EnquiryFormProps {
   title?: string;
@@ -19,11 +27,14 @@ export default function EnquiryForm({
   className = "",
   compact = false,
 }: EnquiryFormProps) {
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+65");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     service: defaultService,
+    preferredDate: "",
+    preferredTime: "Morning (12:00 PM – 2:30 PM)",
     message: "",
   });
 
@@ -31,41 +42,95 @@ export default function EnquiryForm({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const currentRule =
+    COUNTRY_PHONE_RULES.find((r) => r.code === selectedCountryCode) || COUNTRY_PHONE_RULES[0];
+
+  // Handle Full Name Input (Reject Digits entirely)
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const sanitized = sanitizeNameInput(e.target.value);
+    setFormData((prev) => ({ ...prev, fullName: sanitized }));
+  };
+
+  // Handle Phone Number Input (Only digits, strictly capped by country rule)
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const digitsOnly = sanitizePhoneDigits(e.target.value);
+    const capped = digitsOnly.slice(0, currentRule.digits);
+    setFormData((prev) => ({ ...prev, phone: capped }));
+  };
+
+  const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCode = e.target.value;
+    setSelectedCountryCode(newCode);
+    const newRule = COUNTRY_PHONE_RULES.find((r) => r.code === newCode) || COUNTRY_PHONE_RULES[0];
+    setFormData((prev) => ({
+      ...prev,
+      phone: prev.phone.slice(0, newRule.digits),
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
-    // Client-side validation
-    if (!formData.fullName.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setErrorMessage("Please fill in all required fields (Name, Email, Message).");
+    // 1. Validate Name
+    if (!formData.fullName.trim()) {
+      setErrorMessage("Please enter your full name.");
+      return;
+    }
+    if (!isValidName(formData.fullName)) {
+      setErrorMessage("Please enter a valid name without digits or special characters.");
       return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(formData.email.trim())) {
-      setErrorMessage("Please enter a valid email address.");
+    // 2. Validate Email
+    if (!isValidEmail(formData.email)) {
+      setErrorMessage("Please enter a valid email address (e.g. name@domain.com).");
+      return;
+    }
+
+    // 3. Validate Phone Digits against Country Rule
+    if (!formData.phone.trim()) {
+      setErrorMessage(`Please enter your mobile number for ${currentRule.country}.`);
+      return;
+    }
+    if (formData.phone.length !== currentRule.digits) {
+      setErrorMessage(
+        `For ${currentRule.country} (${currentRule.code}), the mobile number must be exactly ${currentRule.digits} digits without spaces. (You entered ${formData.phone.length} digits).`
+      );
+      return;
+    }
+
+    // 4. Validate Preferred Date & Time
+    if (!formData.preferredDate) {
+      setErrorMessage("Please select your preferred consultation date.");
+      return;
+    }
+
+    // 5. Validate Message
+    if (!formData.message.trim()) {
+      setErrorMessage("Please enter your message or tailoring requirements.");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // NOTE: Form state handling. When a backend mailer/API (e.g. Next.js server action/API route)
-      // is connected with production mail credentials, the fetch call can be dispatched here.
-      console.log("Enquiry Form Submission:", formData);
+      await submitLeadToGoogleSheet({
+        formType: "Enquiry",
+        fullName: formData.fullName,
+        email: formData.email,
+        countryCode: selectedCountryCode,
+        phone: formData.phone,
+        fullPhone: `${selectedCountryCode} ${formData.phone}`,
+        service: formData.service,
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+        message: formData.message,
+      });
 
-      // Simulate local state transition
-      await new Promise((resolve) => setTimeout(resolve, 600));
       setIsSubmitted(true);
     } catch {
-      setErrorMessage("An unexpected error occurred. Please try contacting us via WhatsApp or Phone.");
+      setErrorMessage("An unexpected error occurred. Please contact us via WhatsApp or Phone.");
     } finally {
       setIsSubmitting(false);
     }
@@ -98,7 +163,12 @@ export default function EnquiryForm({
           <div className="space-y-1">
             <h4 className="text-xl font-bold text-neutral-900">Thank You, {formData.fullName}!</h4>
             <p className="text-xs sm:text-sm text-neutral-600 max-w-md mx-auto leading-relaxed">
-              Your inquiry regarding <strong>{formData.service}</strong> has been received. Our atelier team will review your message and reach out shortly.
+              Your inquiry regarding <strong>{formData.service}</strong> scheduled for{" "}
+              <strong>{formData.preferredDate}</strong> ({formData.preferredTime}) has been recorded. Our atelier team will contact you at{" "}
+              <strong>
+                {selectedCountryCode} {formData.phone}
+              </strong>{" "}
+              shortly.
             </p>
           </div>
 
@@ -106,7 +176,11 @@ export default function EnquiryForm({
             <a
               href={`https://wa.me/6583636036?text=Hi%20Ziya%20Fashion,%20my%20name%20is%20${encodeURIComponent(
                 formData.fullName
-              )}.%20I%20have%20an%20enquiry%20about%20${encodeURIComponent(formData.service)}.`}
+              )}.%20I%20have%20submitted%20an%20enquiry%20for%20${encodeURIComponent(
+                formData.service
+              )}%20on%20${encodeURIComponent(formData.preferredDate)}%20(${encodeURIComponent(
+                formData.preferredTime
+              )}).%20My%20contact:%20${encodeURIComponent(selectedCountryCode + formData.phone)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-full text-xs font-bold shadow hover:opacity-90 transition-opacity"
@@ -123,79 +197,108 @@ export default function EnquiryForm({
                   email: "",
                   phone: "",
                   service: defaultService,
+                  preferredDate: "",
+                  preferredTime: "Morning (12:00 PM – 2:30 PM)",
                   message: "",
                 });
               }}
               className="text-xs text-neutral-600 hover:text-neutral-900 font-semibold underline underline-offset-4 px-3 py-2"
             >
-              Send another message
+              Send another inquiry
             </button>
           </div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           {errorMessage && (
-            <div className="bg-rose-50 border border-rose-200 text-rose-700 px-4 py-3 rounded-xl text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{errorMessage}</span>
+            <div className="bg-rose-50 border border-rose-200 text-rose-700 px-4 py-3 rounded-xl text-xs flex items-center gap-2 animate-in fade-in">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
+              <span className="font-medium">{errorMessage}</span>
             </div>
           )}
 
+          {/* Full Name & Email Fields */}
           <div className={`grid grid-cols-1 ${compact ? "sm:grid-cols-1" : "sm:grid-cols-2"} gap-4`}>
             <div className="space-y-1 text-left">
-              <label className="text-xs font-semibold text-neutral-700">
-                Full Name <span className="text-[#ff7d86]">*</span>
+              <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1">
+                <User className="w-3.5 h-3.5 text-[#ff7d86]" />
+                <span>Full Name</span>
+                <span className="text-[#ff7d86]">*</span>
               </label>
               <input
                 type="text"
                 name="fullName"
                 required
                 value={formData.fullName}
-                onChange={handleChange}
-                placeholder="Your full name"
+                onChange={handleNameChange}
+                placeholder="Full Name (letters only)"
                 className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
               />
             </div>
 
             <div className="space-y-1 text-left">
-              <label className="text-xs font-semibold text-neutral-700">
-                Email Address <span className="text-[#ff7d86]">*</span>
+              <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1">
+                <Mail className="w-3.5 h-3.5 text-[#ff7d86]" />
+                <span>Email Address</span>
+                <span className="text-[#ff7d86]">*</span>
               </label>
               <input
                 type="email"
                 name="email"
                 required
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="name@example.com"
                 className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
               />
             </div>
           </div>
 
+          {/* Country Code + Mobile Number Field */}
           <div className={`grid grid-cols-1 ${compact ? "sm:grid-cols-1" : "sm:grid-cols-2"} gap-4`}>
             <div className="space-y-1 text-left">
-              <label className="text-xs font-semibold text-neutral-700">
-                Phone Number (Optional)
+              <label className="text-xs font-semibold text-neutral-700 flex items-center justify-between">
+                <span className="flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5 text-[#ff7d86]" />
+                  <span>Mobile Number</span>
+                  <span className="text-[#ff7d86]">*</span>
+                </span>
+                <span className="text-[10px] text-neutral-500 font-normal">
+                  Req. {currentRule.digits} digits
+                </span>
               </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+65 ..."
-                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
-              />
+              <div className="flex rounded-xl border border-neutral-300 focus-within:border-[#ff7d86] focus-within:ring-2 focus-within:ring-[#ff7d86]/20 overflow-hidden bg-white">
+                <select
+                  value={selectedCountryCode}
+                  onChange={handleCountryCodeChange}
+                  className="bg-neutral-50 border-r border-neutral-300 px-3 py-3 text-xs sm:text-sm font-semibold text-neutral-800 outline-none cursor-pointer max-w-[120px]"
+                >
+                  {COUNTRY_PHONE_RULES.map((c) => (
+                    <option key={c.code + c.country} value={c.code}>
+                      {c.flag} {c.code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  maxLength={currentRule.digits}
+                  placeholder={`e.g. ${currentRule.sample}`}
+                  className="w-full px-3.5 py-3 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
+                />
+              </div>
             </div>
 
             <div className="space-y-1 text-left">
               <label className="text-xs font-semibold text-neutral-700">
-                Service / Topic of Interest
+                Service / Topic of Interest <span className="text-[#ff7d86]">*</span>
               </label>
               <select
                 name="service"
                 value={formData.service}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 bg-white"
               >
                 <option value="General Tailoring Inquiry">General Tailoring Inquiry</option>
@@ -209,6 +312,43 @@ export default function EnquiryForm({
             </div>
           </div>
 
+          {/* Date & Time Fields */}
+          <div className={`grid grid-cols-1 ${compact ? "sm:grid-cols-1" : "sm:grid-cols-2"} gap-4`}>
+            <div className="space-y-1 text-left">
+              <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-[#ff7d86]" />
+                <span>Preferred Date</span>
+                <span className="text-[#ff7d86]">*</span>
+              </label>
+              <input
+                type="date"
+                required
+                min={new Date().toISOString().split("T")[0]}
+                value={formData.preferredDate}
+                onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 bg-white"
+              />
+            </div>
+
+            <div className="space-y-1 text-left">
+              <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-[#ff7d86]" />
+                <span>Preferred Time Slot</span>
+                <span className="text-[#ff7d86]">*</span>
+              </label>
+              <select
+                value={formData.preferredTime}
+                onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 bg-white"
+              >
+                <option value="Morning (12:00 PM – 2:30 PM)">12:00 PM – 2:30 PM (Afternoon)</option>
+                <option value="Afternoon (2:30 PM – 5:00 PM)">2:30 PM – 5:00 PM (Tea Time)</option>
+                <option value="Evening (5:00 PM – 7:00 PM)">5:00 PM – 7:00 PM (Evening)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Message Field */}
           <div className="space-y-1 text-left">
             <label className="text-xs font-semibold text-neutral-700">
               Your Message or Requirements <span className="text-[#ff7d86]">*</span>
@@ -216,10 +356,10 @@ export default function EnquiryForm({
             <textarea
               name="message"
               required
-              rows={4}
+              rows={3}
               value={formData.message}
-              onChange={handleChange}
-              placeholder="Tell us about your garment, style ideas, or fitting requirements..."
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              placeholder="Tell us about your garment, measurements, style ideas, or fitting requirements..."
               className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 resize-y"
             />
           </div>
@@ -228,13 +368,13 @@ export default function EnquiryForm({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white py-3.5 sm:py-4 px-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-[1.01] active:scale-95 transition-all disabled:opacity-70"
+              className="w-full inline-flex items-center justify-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white py-3.5 sm:py-4 px-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-[1.01] active:scale-95 transition-all disabled:opacity-70 cursor-pointer"
             >
               {isSubmitting ? (
-                <span>Sending Inquiry...</span>
+                <span>Verifying &amp; Submitting...</span>
               ) : (
                 <>
-                  <span>Send Inquiry</span>
+                  <span>Submit Quality Inquiry</span>
                   <Send className="w-4 h-4" />
                 </>
               )}
@@ -247,7 +387,7 @@ export default function EnquiryForm({
       <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-4 text-xs text-neutral-500">
         <div className="flex items-center gap-2">
           <Phone className="w-3.5 h-3.5 text-[#ff7d86]" />
-          <span>Call or WhatsApp:</span>
+          <span>Direct Contact:</span>
           <a
             href="tel:+6583636036"
             className="font-bold text-neutral-800 hover:text-[#ff7d86] transition-colors"

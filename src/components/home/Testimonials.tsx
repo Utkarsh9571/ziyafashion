@@ -31,7 +31,7 @@ export default function Testimonials() {
             >
               <div>
                 {/* 1. Customer Image (Compact balanced portrait aspect) */}
-                <div className="relative w-full aspect-[4/5] max-w-[240px] sm:max-w-[260px] lg:max-w-[280px] mx-auto rounded-xl sm:rounded-2xl overflow-hidden shadow-sm bg-neutral-200 border border-neutral-300/60">
+                <div className="relative w-full aspect-[4/5] max-w-[240px] sm:max-w-[260px] lg:max-w-[280px] mx-auto rounded-xl sm:rounded-2xl overflow-hidden shadow-md">
                   <Image
                     src={item.imageUrl}
                     alt={item.name}

@@ -95,13 +95,13 @@ export default function ProductCataloguePage() {
               className="group bg-white rounded-[32px] overflow-hidden border border-neutral-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Image Container */}
-                <div className="relative aspect-[3/3.8] w-full overflow-hidden bg-[#f4f4f4]">
+                {/* Image Container matching exact 360:500 (18:25) aspect ratio */}
+                <div className="relative aspect-[18/25] w-full overflow-hidden bg-neutral-100">
                   <Image
                     src={item.imageUrl}
                     alt={item.title}
                     fill
-                    className="object-contain object-bottom group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-neutral-900 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
