@@ -86,7 +86,7 @@ export default function AppointmentFormContent() {
                   notes: "",
                 });
               }}
-              className="bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+              className="bg-[#ff7d86] hover:bg-[#e85661] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-md"
             >
               Book Another Appointment
             </button>
@@ -95,7 +95,7 @@ export default function AppointmentFormContent() {
       ) : (
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200/80 shadow-2xl space-y-8">
           <div className="border-b border-neutral-100 pb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#ff5252]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#ff7d86]">
               Atelier Portal
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mt-1">
@@ -109,7 +109,7 @@ export default function AppointmentFormContent() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-2">
-                <User className="w-4 h-4 text-[#ff5252]" />
+                <User className="w-4 h-4 text-[#ff7d86]" />
                 <span>Personal Information</span>
               </h3>
 
@@ -122,7 +122,7 @@ export default function AppointmentFormContent() {
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm"
                   />
                 </div>
 
@@ -134,7 +134,7 @@ export default function AppointmentFormContent() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm"
                   />
                 </div>
 
@@ -146,7 +146,7 @@ export default function AppointmentFormContent() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="email@example.com"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm"
                   />
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function AppointmentFormContent() {
 
             <div className="space-y-4 pt-4 border-t border-neutral-100">
               <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-[#ff5252]" />
+                <Calendar className="w-4 h-4 text-[#ff7d86]" />
                 <span>Preferences</span>
               </h3>
 
@@ -164,7 +164,7 @@ export default function AppointmentFormContent() {
                   <select
                     value={formData.appointmentType}
                     onChange={(e) => setFormData({ ...formData, appointmentType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm bg-white"
                   >
                     <option value="Custom Tailoring">Custom Tailoring</option>
                     <option value="Custom Design">Custom Design & Couture</option>
@@ -180,7 +180,7 @@ export default function AppointmentFormContent() {
                     required
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm bg-white"
                   />
                 </div>
 
@@ -189,7 +189,7 @@ export default function AppointmentFormContent() {
                   <select
                     value={formData.preferredTime}
                     onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm bg-white"
                   >
                     <option value="Morning (10:00 AM – 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
                     <option value="Afternoon (1:00 PM – 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
@@ -201,7 +201,7 @@ export default function AppointmentFormContent() {
 
             <div className="space-y-4 pt-4 border-t border-neutral-100">
               <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-2">
-                <FileText className="w-4 h-4 text-[#ff5252]" />
+                <FileText className="w-4 h-4 text-[#ff7d86]" />
                 <span>Occasion & Notes</span>
               </h3>
 
@@ -212,7 +212,7 @@ export default function AppointmentFormContent() {
                   value={formData.occasion}
                   onChange={(e) => setFormData({ ...formData, occasion: e.target.value })}
                   placeholder="e.g. Wedding, Gala, Celebration, Daily custom tailoring"
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm"
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm"
                 />
               </div>
 
@@ -223,7 +223,7 @@ export default function AppointmentFormContent() {
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   placeholder="Notes regarding measurements, styling, or inspirations..."
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-sm resize-y"
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-sm resize-y"
                 />
               </div>
             </div>
@@ -232,7 +232,7 @@ export default function AppointmentFormContent() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#ff5252] hover:bg-[#f03e3e] text-white py-4 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full bg-[#ff7d86] hover:bg-[#e85661] text-white py-4 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <span>Submitting Request...</span>

@@ -16,7 +16,7 @@ export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero */}
-      <section className="w-full bg-[#ff5252] text-white">
+      <section className="w-full bg-[#ff7d86] text-white">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-16 text-center">
           <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/95 uppercase mb-2">
             SINGAPORE ATELIER
@@ -47,7 +47,7 @@ export default function ContactPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <div className="inline-flex items-center gap-1.5 bg-[#ff5252] text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider mb-1 shadow-sm">
+                <div className="inline-flex items-center gap-1.5 bg-[#ff7d86] text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider mb-1 shadow-sm">
                   <Scissors className="w-3 h-3" />
                   <span>Atelier Studio</span>
                 </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ff5252]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#ff7d86]">
                 VISIT OUR BOUTIQUE
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#212529] mt-1">
@@ -71,7 +71,7 @@ export default function ContactPage() {
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-neutral-700">
               <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
-                <MapPin className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-neutral-900">Boutique Address</p>
                   <p className="text-neutral-600 mt-0.5">{VERIFIED_CONTACT_INFO.addressLine1}</p>
@@ -80,12 +80,12 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
-                <Phone className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-neutral-900">Phone / WhatsApp</p>
                   <a
                     href="tel:+6583636036"
-                    className="text-neutral-600 hover:text-[#ff5252] transition-colors mt-0.5 block"
+                    className="text-neutral-600 hover:text-[#ff7d86] transition-colors mt-0.5 block"
                   >
                     {VERIFIED_CONTACT_INFO.phone}
                   </a>
@@ -93,12 +93,12 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
-                <Mail className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-neutral-900">Email Address</p>
                   <a
                     href={`mailto:${VERIFIED_CONTACT_INFO.email}`}
-                    className="text-neutral-600 hover:text-[#ff5252] transition-colors mt-0.5 block"
+                    className="text-neutral-600 hover:text-[#ff7d86] transition-colors mt-0.5 block"
                   >
                     {VERIFIED_CONTACT_INFO.email}
                   </a>
@@ -106,7 +106,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80">
-                <Clock className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-neutral-900">Operating Hours</p>
                   <p className="text-neutral-600 mt-0.5">{VERIFIED_CONTACT_INFO.hoursWeekdays}</p>

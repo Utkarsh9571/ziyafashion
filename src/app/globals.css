@@ -2,9 +2,11 @@
 
 @layer base {
   :root {
-    --ziya-coral: #ff5252;
-    --ziya-coral-dark: #f03e3e;
-    --ziya-coral-soft: #ffebee;
+    --ziya-coral: #ff7d86;
+    --ziya-coral-dark: #e85661;
+    --ziya-coral-soft: #ffdddf;
+    --ziya-coral-ultra-soft: #fff1f1;
+    --ziya-coral-accent: #ff9ba2;
     --ziya-dark-bg: #2f343b;
     --ziya-dark-bottom: #24292e;
   }
@@ -32,7 +34,7 @@ body {
   display: inline-block;
   width: 32px;
   height: 1.5px;
-  background-color: #ff5252;
+  background-color: #ff7d86;
   opacity: 0.85;
 }
 
@@ -40,7 +42,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #ff5252;
+  background-color: #ff7d86;
   display: inline-block;
 }
 
@@ -48,6 +50,6 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #ff5252;
+  background-color: #ff7d86;
   display: inline-block;
 }

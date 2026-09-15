@@ -15,7 +15,7 @@ export default function DesignGallery() {
         
         {/* Section Eyebrow, Heading & Description */}
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
             OUR COLLECTIONS
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -37,7 +37,7 @@ export default function DesignGallery() {
             <div
               key={col.id}
               onClick={() => setSelectedCollection(col)}
-              className="group relative rounded-[28px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 bg-[#ff5252] flex flex-col justify-end aspect-[3/4.2]"
+              className="group relative rounded-[28px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 bg-[#ff7d86] flex flex-col justify-end aspect-[3/4.2]"
             >
               {/* Image */}
               <Image
@@ -63,7 +63,7 @@ export default function DesignGallery() {
                   {col.description}
                 </p>
                 <div className="pt-2">
-                  <span className="inline-flex items-center gap-1.5 bg-white text-[#ff5252] text-xs font-bold px-4 py-2 rounded-full shadow-md group-hover:bg-neutral-100 transition-colors">
+                  <span className="inline-flex items-center gap-1.5 bg-white text-[#ff7d86] text-xs font-bold px-4 py-2 rounded-full shadow-md group-hover:bg-neutral-100 transition-colors">
                     <Eye className="w-3.5 h-3.5" />
                     <span>View Collection</span>
                   </span>
@@ -77,7 +77,7 @@ export default function DesignGallery() {
         <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/product-gallery/"
-            className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
           >
             <span>VIEW PRODUCT CATALOGUE</span>
             <ArrowRight className="w-4 h-4" />
@@ -107,7 +107,7 @@ export default function DesignGallery() {
                   />
                 </div>
                 <div className="w-full sm:w-1/2 space-y-4 text-left">
-                  <span className="inline-block bg-[#ffebee] text-[#ff5252] text-xs font-bold px-3 py-1 rounded-full uppercase">
+                  <span className="inline-block bg-[#ffdddf] text-[#ff7d86] text-xs font-bold px-3 py-1 rounded-full uppercase">
                     {selectedCollection.category}
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold font-sans text-neutral-900 leading-tight">
@@ -120,7 +120,7 @@ export default function DesignGallery() {
                   <div className="pt-2">
                     <Link
                       href={`/appointment?service=${encodeURIComponent(selectedCollection.title)}`}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white py-3 px-5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white py-3 px-5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all"
                     >
                       <Calendar className="w-4 h-4" />
                       <span>Book Consultation for this Collection</span>

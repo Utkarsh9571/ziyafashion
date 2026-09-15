@@ -18,7 +18,7 @@ export default function ServicesSection() {
         
         {/* Section Eyebrow, Heading & Description */}
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
             WHAT WE DO
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -54,14 +54,14 @@ export default function ServicesSection() {
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm text-[#ff5252] flex items-center justify-center shadow-md">
+                    <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm text-[#ff7d86] flex items-center justify-center shadow-md">
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Service Text Body */}
                   <div className="p-5 sm:p-6 space-y-2.5">
-                    <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff5252] transition-colors">
+                    <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff7d86] transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
@@ -74,7 +74,7 @@ export default function ServicesSection() {
                 <div className="p-5 sm:p-6 pt-0">
                   <Link
                     href={`/appointment?service=${encodeURIComponent(service.title)}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7d86] hover:opacity-80 transition-opacity"
                   >
                     <span>Book Service</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -89,7 +89,7 @@ export default function ServicesSection() {
         <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
           >
             <span>VIEW ALL SERVICES →</span>
           </Link>

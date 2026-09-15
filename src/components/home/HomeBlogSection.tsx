@@ -13,7 +13,7 @@ export default function HomeBlogSection() {
         
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
             THE ZIYA JOURNAL
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -49,7 +49,7 @@ export default function HomeBlogSection() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   {post.category && (
-                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[#ff5252] text-[10px] font-bold px-3 py-1 rounded-full shadow-sm">
+                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[#ff7d86] text-[10px] font-bold px-3 py-1 rounded-full shadow-sm">
                       {post.category}
                     </div>
                   )}
@@ -58,18 +58,18 @@ export default function HomeBlogSection() {
                 <div className="p-5 sm:p-6 space-y-2.5">
                   <div className="flex items-center gap-3 text-[11px] text-neutral-500 font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3 text-[#ff5252]" />
+                      <Calendar className="w-3 h-3 text-[#ff7d86]" />
                       {post.date}
                     </span>
                     {post.readTime && (
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-[#ff5252]" />
+                        <Clock className="w-3 h-3 text-[#ff7d86]" />
                         {post.readTime}
                       </span>
                     )}
                   </div>
 
-                  <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff5252] transition-colors leading-snug">
+                  <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-snug">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
 
@@ -82,7 +82,7 @@ export default function HomeBlogSection() {
               <div className="p-5 sm:p-6 pt-0">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7d86] hover:opacity-80 transition-opacity"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -96,7 +96,7 @@ export default function HomeBlogSection() {
         <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
           >
             <span>READ MORE STORIES</span>
             <ArrowRight className="w-4 h-4" />

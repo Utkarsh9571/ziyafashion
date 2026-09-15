@@ -22,7 +22,7 @@ export default function ProductCataloguePage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* 1. Full-Width Hero */}
-      <section className="w-full bg-[#ff5252] text-white">
+      <section className="w-full bg-[#ff7d86] text-white">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-8 sm:pt-12 pb-16 sm:pb-20 text-center">
           <span className="text-xs sm:text-sm font-semibold tracking-widest text-white/95 uppercase mb-2 block">
             OUR PRODUCT CATALOGUE
@@ -36,7 +36,7 @@ export default function ProductCataloguePage() {
           <div className="mt-8 flex justify-center">
             <Link
               href="/appointment"
-              className="inline-flex items-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-8 py-4 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 bg-white text-[#ff7d86] hover:bg-neutral-50 px-8 py-4 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all"
             >
               <Calendar className="w-4 h-4" />
               <span>BOOK AN APPOINTMENT</span>
@@ -56,7 +56,7 @@ export default function ProductCataloguePage() {
                   key={index}
                   className="bg-white rounded-[28px] p-6 sm:p-8 border border-neutral-200/70 shadow-sm flex flex-col items-center text-center space-y-3"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#ff5252]/10 text-[#ff5252] flex items-center justify-center mb-1">
+                  <div className="w-12 h-12 rounded-full bg-[#ff7d86]/10 text-[#ff7d86] flex items-center justify-center mb-1">
                     <IconComp className="w-6 h-6" />
                   </div>
                   <h3 className="font-extrabold text-lg sm:text-xl text-[#212529]">
@@ -75,7 +75,7 @@ export default function ProductCataloguePage() {
       {/* 3. Catalogue Grid: 12 Exact Tailoring Entries (3-Column Grid) */}
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
         <div className="text-center mb-10 sm:mb-14">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#ff5252] mb-1 block">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#ff7d86] mb-1 block">
             TAILORING OFFERINGS
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -107,14 +107,14 @@ export default function ProductCataloguePage() {
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-neutral-900 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                     {item.itemNumber}
                   </div>
-                  <div className="absolute top-4 right-4 bg-[#ff5252] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                  <div className="absolute top-4 right-4 bg-[#ff7d86] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                     {item.category}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 sm:p-7 space-y-2">
-                  <h3 className="font-extrabold text-xl text-[#212529] group-hover:text-[#ff5252] transition-colors leading-tight">
+                  <h3 className="font-extrabold text-xl text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-tight">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
@@ -127,7 +127,7 @@ export default function ProductCataloguePage() {
               <div className="p-6 sm:p-7 pt-0">
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:text-[#e04545] transition-colors uppercase tracking-wider group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7d86] hover:text-[#e85661] transition-colors uppercase tracking-wider group-hover:translate-x-1 transition-transform"
                 >
                   <span>{item.ctaText}</span>
                 </Link>
@@ -137,7 +137,7 @@ export default function ProductCataloguePage() {
         </div>
 
         {/* Bottom CTA to Book Appointment */}
-        <div className="mt-16 text-center bg-gradient-to-r from-[#ff5252] via-[#ff5f5f] to-[#ff7373] text-white rounded-[32px] p-8 sm:p-12 shadow-xl">
+        <div className="mt-16 text-center bg-gradient-to-r from-[#ff7d86] via-[#ff9ba2] to-[#ff7d86] text-white rounded-[32px] p-8 sm:p-12 shadow-xl">
           <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Need a Custom Design or Measurement?
           </h3>
@@ -147,7 +147,7 @@ export default function ProductCataloguePage() {
           <div className="mt-6">
             <Link
               href="/appointment"
-              className="inline-flex items-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 bg-white text-[#ff7d86] hover:bg-neutral-50 px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               <span>BOOK AN APPOINTMENT</span>
               <ArrowRight className="w-4 h-4" />

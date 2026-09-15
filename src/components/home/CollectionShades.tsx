@@ -10,7 +10,7 @@ export default function CollectionShades() {
         
         {/* Centered Heading with reference divider */}
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff7d86] tracking-tight">
             Explore Ziya Fashion
           </h2>
           <div className="ref-divider">

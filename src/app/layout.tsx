@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
       <body
-        className="min-h-full flex flex-col font-sans bg-white text-[#212529] selection:bg-[#ff5252] selection:text-white"
+        className="min-h-full flex flex-col font-sans bg-white text-[#212529] selection:bg-[#ff7d86] selection:text-white"
         suppressHydrationWarning
       >
         <Header />

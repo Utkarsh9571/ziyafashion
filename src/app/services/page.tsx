@@ -42,7 +42,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* SECTION 1 — HERO */}
-      <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff5252] text-white flex flex-col justify-center relative overflow-hidden">
+      <section className="w-full min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-[#ff7d86] text-white flex flex-col justify-center relative overflow-hidden">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-full flex flex-col justify-center py-6 sm:py-8 lg:py-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             
@@ -62,10 +62,10 @@ export default function ServicesPage() {
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <a
                   href="#services-list"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#ff7d86] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap"
                 >
                   <span>EXPLORE OUR SERVICES</span>
-                  <ArrowRight className="w-4 h-4 text-[#ff5252]" />
+                  <ArrowRight className="w-4 h-4 text-[#ff7d86]" />
                 </a>
 
                 {/* Compact Pill-shaped Dropdown next to primary CTA */}
@@ -133,7 +133,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-end h-full w-full min-h-[340px] sm:min-h-[440px] md:min-h-[500px] lg:min-h-[560px] xl:min-h-[620px]">
               
               {/* 1. Backdrop Circle: Flat, slightly lighter tint (~85-90% height), pure backdrop behind photo */}
-              <div className="absolute top-1/2 left-1/2 lg:left-auto lg:right-2 xl:right-6 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] lg:w-[480px] lg:h-[480px] xl:w-[540px] xl:h-[540px] 2xl:w-[580px] 2xl:h-[580px] rounded-full bg-[#ff7676] shadow-xl z-0 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 lg:left-auto lg:right-2 xl:right-6 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] lg:w-[480px] lg:h-[480px] xl:w-[540px] xl:h-[540px] 2xl:w-[580px] 2xl:h-[580px] rounded-full bg-[#ff9ba2] shadow-xl z-0 pointer-events-none" />
 
               {/* 2. Photo in front of circle, breaking the circle's outline and bleeding straight through bottom edge */}
               <div className="relative z-10 w-[290px] h-[340px] sm:w-[380px] sm:h-[440px] md:w-[440px] md:h-[500px] lg:w-[480px] lg:h-[560px] xl:w-[540px] xl:h-[620px] flex items-end justify-center">
@@ -156,7 +156,7 @@ export default function ServicesPage() {
       {/* SECTION 2 — SERVICES INTRO */}
       <section className="w-full pt-16 sm:pt-20 pb-10 bg-white" id="services-intro">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 text-center">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
             WHAT WE DO
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
-                      <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm text-[#ff5252] flex items-center justify-center shadow-md">
+                      <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm text-[#ff7d86] flex items-center justify-center shadow-md">
                         <IconComponent className="w-5 h-5" />
                       </div>
                       <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
@@ -206,7 +206,7 @@ export default function ServicesPage() {
 
                     {/* Service Card Content */}
                     <div className="p-5 sm:p-6 space-y-2.5">
-                      <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff5252] transition-colors leading-snug">
+                      <h3 className="font-extrabold text-lg sm:text-xl text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-snug">
                         {service.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                   <div className="p-5 sm:p-6 pt-0">
                     <Link
                       href={service.href}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7d86] hover:opacity-80 transition-opacity"
                     >
                       <span>{service.ctaText}</span>
                     </Link>
@@ -252,7 +252,7 @@ export default function ServicesPage() {
             {/* Right Text & Traditional Wear Categories */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <div>
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
                   TRADITIONAL WEAR
                 </p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -279,7 +279,7 @@ export default function ServicesPage() {
                       key={item}
                       className="bg-white border border-neutral-200/80 rounded-2xl px-3.5 py-2.5 text-xs font-semibold text-neutral-800 flex items-center gap-2 shadow-sm"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#ff5252] shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#ff7d86] shrink-0" />
                       <span className="truncate">{item}</span>
                     </div>
                   ))}
@@ -290,7 +290,7 @@ export default function ServicesPage() {
               <div className="pt-2">
                 <Link
                   href="/product-gallery/"
-                  className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
                 >
                   <span>VIEW PRODUCT CATALOGUE</span>
                   <ArrowRight className="w-4 h-4" />
@@ -311,7 +311,7 @@ export default function ServicesPage() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
               <div>
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
                   ALTERATIONS & FITTINGS
                 </p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -331,7 +331,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-[#f9fafb] p-5 rounded-2xl border border-neutral-200/80 space-y-1.5">
                   <h4 className="font-bold text-sm sm:text-base text-[#212529] flex items-center gap-2">
-                    <Scissors className="w-4 h-4 text-[#ff5252]" />
+                    <Scissors className="w-4 h-4 text-[#ff7d86]" />
                     <span>Women&apos;s Alterations</span>
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -341,7 +341,7 @@ export default function ServicesPage() {
 
                 <div className="bg-[#f9fafb] p-5 rounded-2xl border border-neutral-200/80 space-y-1.5">
                   <h4 className="font-bold text-sm sm:text-base text-[#212529] flex items-center gap-2">
-                    <Maximize2 className="w-4 h-4 text-[#ff5252]" />
+                    <Maximize2 className="w-4 h-4 text-[#ff7d86]" />
                     <span>Men&apos;s Alterations</span>
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -354,7 +354,7 @@ export default function ServicesPage() {
               <div className="pt-2">
                 <Link
                   href="/appointment?service=Alterations%20%26%20Fittings"
-                  className="inline-flex items-center gap-2 bg-[#212529] hover:bg-[#ff5252] text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 bg-[#212529] hover:bg-[#ff7d86] text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
                 >
                   <span>ENQUIRE ABOUT ALTERATIONS</span>
                   <ArrowRight className="w-4 h-4" />
@@ -385,7 +385,7 @@ export default function ServicesPage() {
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="text-center mb-12">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
               WHY CHOOSE ZIYA FASHION?
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -406,7 +406,7 @@ export default function ServicesPage() {
                   key={feat.id}
                   className="bg-white rounded-[28px] p-6 sm:p-7 border border-neutral-200/80 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col items-center"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[#ffebee] text-[#ff5252] flex items-center justify-center mb-5 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-[#ffdddf] text-[#ff7d86] flex items-center justify-center mb-5 shadow-inner">
                     <IconComp className="w-7 h-7" />
                   </div>
                   <h3 className="font-extrabold text-base sm:text-lg text-[#212529] mb-2">
@@ -428,7 +428,7 @@ export default function ServicesPage() {
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="text-center mb-12">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
               OUR PROCESS
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -448,7 +448,7 @@ export default function ServicesPage() {
                 className="relative bg-[#f9fafb] rounded-[28px] p-6 sm:p-7 border border-neutral-200/80 shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-3xl font-black text-[#ff5252] mb-3">
+                  <div className="text-3xl font-black text-[#ff7d86] mb-3">
                     {step.step}
                   </div>
                   <h3 className="font-extrabold text-lg text-[#212529] mb-2">
@@ -466,7 +466,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION 8 — PRODUCT CATALOGUE CONNECTION */}
-      <section className="w-full py-12 sm:py-16 bg-[#ff5252] text-white">
+      <section className="w-full py-12 sm:py-16 bg-[#ff7d86] text-white">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-4">
           <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/90 uppercase">
             EXPLORE OUR STYLES
@@ -480,10 +480,10 @@ export default function ServicesPage() {
           <div className="pt-2">
             <Link
               href="/product-gallery/"
-              className="inline-flex items-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 bg-white text-[#ff7d86] hover:bg-neutral-50 px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105 active:scale-95"
             >
               <span>VIEW PRODUCT CATALOGUE</span>
-              <ArrowRight className="w-4 h-4 text-[#ff5252]" />
+              <ArrowRight className="w-4 h-4 text-[#ff7d86]" />
             </Link>
           </div>
         </div>
@@ -501,7 +501,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href="/appointment"
-              className="inline-flex items-center justify-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white px-8 py-4 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-8 py-4 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95"
             >
               <Calendar className="w-4 h-4" />
               <span>BOOK AN APPOINTMENT</span>
@@ -510,7 +510,7 @@ export default function ServicesPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 text-[#212529] border border-neutral-300 px-8 py-4 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-sm transition-all"
             >
-              <Phone className="w-4 h-4 text-[#ff5252]" />
+              <Phone className="w-4 h-4 text-[#ff7d86]" />
               <span>CONTACT US</span>
             </Link>
           </div>

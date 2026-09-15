@@ -12,7 +12,7 @@ export default function FeaturedDesigns() {
         {/* Section Header */}
         <div className="relative flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div className="mx-auto md:mx-0 md:flex-1 text-center md:text-left">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5252] mb-1 block">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff7d86] mb-1 block">
               EXPLORE OUR WORK
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#212529] tracking-tight">
@@ -30,7 +30,7 @@ export default function FeaturedDesigns() {
 
           {/* Indicators on right */}
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wider text-neutral-400 absolute right-0 top-2">
-            <span className="text-[#ff5252] border-b-2 border-[#ff5252] pb-0.5">01</span>
+            <span className="text-[#ff7d86] border-b-2 border-[#ff7d86] pb-0.5">01</span>
             <span>02</span>
             <span>03</span>
             <span>04</span>
@@ -57,11 +57,11 @@ export default function FeaturedDesigns() {
                   />
                 </div>
 
-                <span className="inline-block bg-neutral-100 text-neutral-700 text-[10px] font-semibold px-2.5 py-0.5 rounded-full mb-1 group-hover:bg-[#ff5252] group-hover:text-white transition-colors">
+                <span className="inline-block bg-neutral-100 text-neutral-700 text-[10px] font-semibold px-2.5 py-0.5 rounded-full mb-1 group-hover:bg-[#ff7d86] group-hover:text-white transition-colors">
                   {item.categoryTag}
                 </span>
 
-                <h3 className="font-extrabold text-sm sm:text-base text-[#212529] group-hover:text-[#ff5252] transition-colors leading-tight">
+                <h3 className="font-extrabold text-sm sm:text-base text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-tight">
                   {item.title}
                 </h3>
               </Link>
@@ -73,10 +73,10 @@ export default function FeaturedDesigns() {
         <div className="text-center sm:text-right mt-10">
           <Link
             href="/product-gallery/"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#ff5252] hover:opacity-80 transition-opacity uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#ff7d86] hover:opacity-80 transition-opacity uppercase tracking-wider"
           >
             <span>VIEW PRODUCT CATALOGUE</span>
-            <ChevronRight className="w-4 h-4 text-[#ff5252]" />
+            <ChevronRight className="w-4 h-4 text-[#ff7d86]" />
           </Link>
         </div>
 

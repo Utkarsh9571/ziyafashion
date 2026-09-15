@@ -24,8 +24,8 @@ export default function Header() {
     <header
       className={`sticky top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#ff5252]/95 backdrop-blur-md shadow-md py-1"
-          : "bg-[#ff5252] py-2 sm:py-2.5"
+          ? "bg-[#ff7d86]/95 backdrop-blur-md shadow-md py-1"
+          : "bg-[#ff7d86] py-2 sm:py-2.5"
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
@@ -74,7 +74,7 @@ export default function Header() {
 
           <Link
             href="/appointment"
-            className="hidden md:inline-flex items-center gap-1.5 bg-white text-[#ff5252] text-xs font-bold px-4 py-2 rounded-full shadow-md hover:bg-neutral-100 transition-all whitespace-nowrap"
+            className="hidden md:inline-flex items-center gap-1.5 bg-white text-[#ff7d86] text-xs font-bold px-4 py-2 rounded-full shadow-md hover:bg-neutral-100 transition-all whitespace-nowrap"
           >
             <span>Book Appointment</span>
           </Link>
@@ -93,7 +93,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#f03e3e] px-6 py-5 space-y-3 border-t border-white/20 shadow-2xl animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden bg-[#e85661] px-6 py-5 space-y-3 border-t border-white/20 shadow-2xl animate-in slide-in-from-top duration-200">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.name}
@@ -108,7 +108,7 @@ export default function Header() {
             <Link
               href="/appointment"
               onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-center bg-white text-[#ff5252] py-3 rounded-full font-bold text-sm shadow-md"
+              className="block w-full text-center bg-white text-[#ff7d86] py-3 rounded-full font-bold text-sm shadow-md"
             >
               Book Appointment
             </Link>

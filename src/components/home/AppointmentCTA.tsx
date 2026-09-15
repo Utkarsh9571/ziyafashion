@@ -8,7 +8,7 @@ export default function AppointmentCTA() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="relative rounded-[36px] bg-gradient-to-r from-[#ff5252] via-[#ff5f5f] to-[#ff7373] text-white p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl">
+        <div className="relative rounded-[36px] bg-gradient-to-r from-[#ff7d86] via-[#ff9ba2] to-[#ff7d86] text-white p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
@@ -30,7 +30,7 @@ export default function AppointmentCTA() {
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link
                   href="/appointment"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-[#ff5252] px-8 py-4 rounded-full font-bold text-base shadow-lg hover:bg-neutral-50 hover:shadow-xl hover:scale-105 active:scale-95 transition-all group uppercase tracking-wider text-xs"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-[#ff7d86] px-8 py-4 rounded-full font-bold text-base shadow-lg hover:bg-neutral-50 hover:shadow-xl hover:scale-105 active:scale-95 transition-all group uppercase tracking-wider text-xs"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>BOOK AN APPOINTMENT</span>

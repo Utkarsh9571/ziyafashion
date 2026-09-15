@@ -43,7 +43,7 @@ export default function ContactSection({
 
             {/* Top Content: Badges and Header */}
             <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-4">
-              <div className="inline-flex items-center gap-2 bg-[#ff5252] text-white px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md">
+              <div className="inline-flex items-center gap-2 bg-[#ff7d86] text-white px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md">
                 <Scissors className="w-3.5 h-3.5" />
                 <span>Singapore Atelier</span>
               </div>
@@ -62,7 +62,7 @@ export default function ContactSection({
             <div className="relative z-10 p-6 sm:p-8 lg:p-10 pt-0 space-y-4">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 space-y-3.5 text-xs text-neutral-200">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#ff5252] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#ff7d86] shrink-0 mt-0.5" />
                   <div>
                     <p className="font-bold text-white">Golden Landmark Atelier</p>
                     <p className="text-neutral-300 text-[11px] sm:text-xs">
@@ -72,7 +72,7 @@ export default function ContactSection({
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#ff5252] shrink-0" />
+                  <Clock className="w-4 h-4 text-[#ff7d86] shrink-0" />
                   <div>
                     <p className="font-bold text-white">Opening Hours</p>
                     <p className="text-neutral-300 text-[11px] sm:text-xs">

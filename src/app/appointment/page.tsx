@@ -12,7 +12,7 @@ export default function AppointmentPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero */}
-      <section className="w-full bg-[#ff5252] text-white">
+      <section className="w-full bg-[#ff7d86] text-white">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-16 text-center">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
             Book an Appointment

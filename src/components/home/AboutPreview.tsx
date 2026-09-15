@@ -24,7 +24,7 @@ export default function AboutPreview() {
             {/* Decorative Floating Pill */}
             <div className="absolute -bottom-4 -right-2 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-neutral-100 max-w-xs">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#ff5252] text-white flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#ff7d86] text-white flex items-center justify-center shrink-0">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
@@ -37,7 +37,7 @@ export default function AboutPreview() {
 
           {/* Right Column: Editorial Brand Story & Philosophy */}
           <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-[#ff5252]/10 text-[#ff5252] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-[#ff7d86]/10 text-[#ff7d86] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
               <span>WHO WE ARE</span>
             </div>
 
@@ -45,7 +45,7 @@ export default function AboutPreview() {
               Where Your Vision Meets Our Craft
             </h2>
 
-            <h3 className="text-xl font-bold text-[#ff5252] tracking-tight">
+            <h3 className="text-xl font-bold text-[#ff7d86] tracking-tight">
               Made to Be Uniquely Yours
             </h3>
 
@@ -60,14 +60,14 @@ export default function AboutPreview() {
             {/* Supporting Points */}
             <div className="space-y-4 pt-2">
               <div className="flex items-start gap-3 text-left">
-                <CheckCircle2 className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-neutral-900">Personalised Fittings</h4>
                   <p className="text-xs text-neutral-600 mt-0.5">Garments tailored around your measurements for a comfortable and refined fit.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-left">
-                <CheckCircle2 className="w-5 h-5 text-[#ff5252] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#ff7d86] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-neutral-900">Thoughtful Craftsmanship</h4>
                   <p className="text-xs text-neutral-600 mt-0.5">Careful attention to construction, detailing and finishing throughout the garment.</p>
@@ -78,14 +78,14 @@ export default function AboutPreview() {
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-[#ff5252] hover:bg-[#e04545] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md transition-all group"
+                className="inline-flex items-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md transition-all group"
               >
                 <span>ABOUT ZIYA FASHION</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/appointment"
-                className="inline-flex items-center gap-2 text-neutral-800 hover:text-[#ff5252] text-xs font-bold uppercase tracking-wider transition-colors px-4 py-3"
+                className="inline-flex items-center gap-2 text-neutral-800 hover:text-[#ff7d86] text-xs font-bold uppercase tracking-wider transition-colors px-4 py-3"
               >
                 <span>Book a Fitting →</span>
               </Link>

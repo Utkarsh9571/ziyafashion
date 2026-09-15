@@ -84,9 +84,9 @@ export default async function BlogPostDetailPage({
         <div className="max-w-4xl mx-auto mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-neutral-600 hover:text-[#ff5252] transition-colors uppercase tracking-wider"
+            className="inline-flex items-center gap-2 text-xs font-bold text-neutral-600 hover:text-[#ff7d86] transition-colors uppercase tracking-wider"
           >
-            <ArrowLeft className="w-4 h-4 text-[#ff5252]" />
+            <ArrowLeft className="w-4 h-4 text-[#ff7d86]" />
             <span>Back to Journal</span>
           </Link>
         </div>
@@ -94,7 +94,7 @@ export default async function BlogPostDetailPage({
         {/* Article Header & Title */}
         <header className="max-w-4xl mx-auto text-center space-y-4 mb-10">
           {post.category && (
-            <div className="inline-block bg-[#ffebee] text-[#ff5252] text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+            <div className="inline-block bg-[#ffdddf] text-[#ff7d86] text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
               {post.category}
             </div>
           )}
@@ -105,18 +105,18 @@ export default async function BlogPostDetailPage({
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-neutral-500 font-medium pt-2">
             <span className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-[#ff5252]" />
+              <Calendar className="w-4 h-4 text-[#ff7d86]" />
               {post.date}
             </span>
             {post.readTime && (
               <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-[#ff5252]" />
+                <Clock className="w-4 h-4 text-[#ff7d86]" />
                 {post.readTime}
               </span>
             )}
             {post.author && (
               <span className="flex items-center gap-1.5">
-                <User className="w-4 h-4 text-[#ff5252]" />
+                <User className="w-4 h-4 text-[#ff7d86]" />
                 {post.author}
               </span>
             )}
@@ -141,7 +141,7 @@ export default async function BlogPostDetailPage({
         <article className="max-w-3xl mx-auto space-y-10 text-neutral-800 font-sans">
           
           {/* Excerpt Lead Paragraph */}
-          <div className="text-base sm:text-lg text-neutral-700 font-medium leading-relaxed border-l-4 border-[#ff5252] pl-5 sm:pl-6 py-1 bg-neutral-50 rounded-r-2xl">
+          <div className="text-base sm:text-lg text-neutral-700 font-medium leading-relaxed border-l-4 border-[#ff7d86] pl-5 sm:pl-6 py-1 bg-neutral-50 rounded-r-2xl">
             {post.excerpt}
           </div>
 
@@ -165,8 +165,8 @@ export default async function BlogPostDetailPage({
           ))}
 
           {/* Highlight Callout Box */}
-          <div className="bg-[#ffebee]/60 border border-[#ff5252]/20 rounded-2xl p-6 sm:p-8 space-y-3">
-            <div className="flex items-center gap-2 text-[#ff5252] font-bold text-sm uppercase tracking-wider">
+          <div className="bg-[#ffdddf]/60 border border-[#ff7d86]/20 rounded-2xl p-6 sm:p-8 space-y-3">
+            <div className="flex items-center gap-2 text-[#ff7d86] font-bold text-sm uppercase tracking-wider">
               <Sparkles className="w-4 h-4" />
               <span>Tailoring Advice at Ziya Fashion</span>
             </div>
@@ -189,7 +189,7 @@ export default async function BlogPostDetailPage({
         <section className="max-w-4xl mx-auto mt-16 sm:mt-24 pt-10 border-t border-neutral-200">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ff5252] mb-1 block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#ff7d86] mb-1 block">
                 CONTINUE READING
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#212529] tracking-tight">
@@ -198,7 +198,7 @@ export default async function BlogPostDetailPage({
             </div>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#ff5252] hover:underline uppercase tracking-wider"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#ff7d86] hover:underline uppercase tracking-wider"
             >
               <span>View All Articles</span>
               <ArrowRight className="w-4 h-4" />
@@ -228,7 +228,7 @@ export default async function BlogPostDetailPage({
                     <div className="text-[11px] text-neutral-500 font-medium">
                       {related.date}
                     </div>
-                    <h4 className="font-extrabold text-lg text-[#212529] group-hover:text-[#ff5252] transition-colors leading-snug">
+                    <h4 className="font-extrabold text-lg text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-snug">
                       <Link href={`/blog/${related.slug}`}>{related.title}</Link>
                     </h4>
                     <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed">
@@ -240,7 +240,7 @@ export default async function BlogPostDetailPage({
                 <div className="p-5 sm:p-6 pt-0">
                   <Link
                     href={`/blog/${related.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff5252] hover:opacity-80 transition-opacity"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7d86] hover:opacity-80 transition-opacity"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5" />

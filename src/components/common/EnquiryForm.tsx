@@ -76,7 +76,7 @@ export default function EnquiryForm({
       className={`bg-white rounded-[28px] sm:rounded-[32px] p-6 sm:p-10 border border-neutral-200/90 shadow-xl ${className}`}
     >
       <div className="mb-6 sm:mb-8 text-left">
-        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#ff5252]">
+        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#ff7d86]">
           GET IN TOUCH
         </span>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-[#212529] tracking-tight mt-1">
@@ -144,7 +144,7 @@ export default function EnquiryForm({
           <div className={`grid grid-cols-1 ${compact ? "sm:grid-cols-1" : "sm:grid-cols-2"} gap-4`}>
             <div className="space-y-1 text-left">
               <label className="text-xs font-semibold text-neutral-700">
-                Full Name <span className="text-[#ff5252]">*</span>
+                Full Name <span className="text-[#ff7d86]">*</span>
               </label>
               <input
                 type="text"
@@ -153,13 +153,13 @@ export default function EnquiryForm({
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="Your full name"
-                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
               />
             </div>
 
             <div className="space-y-1 text-left">
               <label className="text-xs font-semibold text-neutral-700">
-                Email Address <span className="text-[#ff5252]">*</span>
+                Email Address <span className="text-[#ff7d86]">*</span>
               </label>
               <input
                 type="email"
@@ -168,7 +168,7 @@ export default function EnquiryForm({
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@example.com"
-                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
               />
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function EnquiryForm({
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+65 ..."
-                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400"
               />
             </div>
 
@@ -196,7 +196,7 @@ export default function EnquiryForm({
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-xs sm:text-sm text-neutral-900 bg-white"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 bg-white"
               >
                 <option value="General Tailoring Inquiry">General Tailoring Inquiry</option>
                 <option value="Bespoke & Made-to-Measure">Bespoke &amp; Made-to-Measure</option>
@@ -211,7 +211,7 @@ export default function EnquiryForm({
 
           <div className="space-y-1 text-left">
             <label className="text-xs font-semibold text-neutral-700">
-              Your Message or Requirements <span className="text-[#ff5252]">*</span>
+              Your Message or Requirements <span className="text-[#ff7d86]">*</span>
             </label>
             <textarea
               name="message"
@@ -220,7 +220,7 @@ export default function EnquiryForm({
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us about your garment, style ideas, or fitting requirements..."
-              className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff5252] focus:ring-2 focus:ring-[#ff5252]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 resize-y"
+              className="w-full px-4 py-3 rounded-xl border border-neutral-300 focus:border-[#ff7d86] focus:ring-2 focus:ring-[#ff7d86]/20 outline-none text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 resize-y"
             />
           </div>
 
@@ -228,7 +228,7 @@ export default function EnquiryForm({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#ff5252] hover:bg-[#f03e3e] text-white py-3.5 sm:py-4 px-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-[1.01] active:scale-95 transition-all disabled:opacity-70"
+              className="w-full inline-flex items-center justify-center gap-2 bg-[#ff7d86] hover:bg-[#e85661] text-white py-3.5 sm:py-4 px-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-[1.01] active:scale-95 transition-all disabled:opacity-70"
             >
               {isSubmitting ? (
                 <span>Sending Inquiry...</span>
@@ -246,20 +246,20 @@ export default function EnquiryForm({
       {/* Direct Contact Bar */}
       <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-4 text-xs text-neutral-500">
         <div className="flex items-center gap-2">
-          <Phone className="w-3.5 h-3.5 text-[#ff5252]" />
+          <Phone className="w-3.5 h-3.5 text-[#ff7d86]" />
           <span>Call or WhatsApp:</span>
           <a
             href="tel:+6583636036"
-            className="font-bold text-neutral-800 hover:text-[#ff5252] transition-colors"
+            className="font-bold text-neutral-800 hover:text-[#ff7d86] transition-colors"
           >
             {VERIFIED_CONTACT_INFO.phone}
           </a>
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="w-3.5 h-3.5 text-[#ff5252]" />
+          <Mail className="w-3.5 h-3.5 text-[#ff7d86]" />
           <a
             href={`mailto:${VERIFIED_CONTACT_INFO.email}`}
-            className="font-bold text-neutral-800 hover:text-[#ff5252] transition-colors"
+            className="font-bold text-neutral-800 hover:text-[#ff7d86] transition-colors"
           >
             {VERIFIED_CONTACT_INFO.email}
           </a>

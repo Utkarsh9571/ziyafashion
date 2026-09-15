@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function SummerOfferBanner() {
   return (
-    <section className="w-full bg-[#ff5252] text-white py-10 sm:py-14 lg:py-16 overflow-hidden my-8 sm:my-12">
+    <section className="w-full bg-[#ff7d86] text-white py-10 sm:py-14 lg:py-16 overflow-hidden my-8 sm:my-12">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -22,7 +22,7 @@ export default function SummerOfferBanner() {
             <div className="pt-2 sm:pt-3">
               <Link
                 href="/designs"
-                className="inline-block bg-white text-[#ff5252] hover:bg-neutral-50 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95"
+                className="inline-block bg-white text-[#ff7d86] hover:bg-neutral-50 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95"
               >
                 More Details
               </Link>

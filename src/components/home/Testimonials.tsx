@@ -9,7 +9,7 @@ export default function Testimonials() {
         
         {/* Section Heading */}
         <div className="text-center mb-10 sm:mb-14 max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#ff5252] tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#ff7d86] tracking-tight uppercase">
             WHAT OUR CUSTOMERS SAY
           </h2>
           <p className="text-neutral-600 text-sm sm:text-base mt-2.5 font-medium">
@@ -69,7 +69,7 @@ export default function Testimonials() {
         {/* Carousel pagination indicator dots */}
         <div className="flex items-center justify-center gap-2 mt-12 sm:mt-14">
           <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-          <span className="w-3 h-3 rounded-full bg-[#ff5252]" />
+          <span className="w-3 h-3 rounded-full bg-[#ff7d86]" />
           <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
         </div>
 

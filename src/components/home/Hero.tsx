@@ -8,7 +8,7 @@ import ServiceSelectDropdown from "@/components/common/ServiceSelectDropdown";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gradient-to-r from-[#ff4d4d] via-[#ff5858] to-[#ff4d4d] text-white relative mt-0 overflow-hidden">
+    <section className="w-full bg-gradient-to-r from-[#ff7d86] via-[#ff9ba2] to-[#ff7d86] text-white relative mt-0 overflow-hidden">
       {/* Constrained Content Container */}
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
@@ -35,10 +35,10 @@ export default function Hero() {
             <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <Link
                 href="/appointment"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#ff5252] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#ff7d86] hover:bg-neutral-50 px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 uppercase tracking-wider whitespace-nowrap"
               >
                 <span>BOOK AN APPOINTMENT</span>
-                <ArrowRight className="w-4 h-4 text-[#ff5252]" />
+                <ArrowRight className="w-4 h-4 text-[#ff7d86]" />
               </Link>
 
               {/* Compact Pill-shaped Dropdown next to primary CTA */}
@@ -106,7 +106,7 @@ export default function Hero() {
           <div className="lg:col-span-6 xl:col-span-6 relative flex justify-center lg:justify-end items-center w-full h-[360px] sm:h-[440px] md:h-[500px] lg:h-[540px] xl:h-[580px]">
             
             {/* 1. Backdrop Circle: Pure background shape, NOT a clipping mask */}
-            <div className="absolute top-1/2 left-1/2 lg:left-auto lg:right-2 xl:right-6 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] md:w-[400px] md:h-[400px] lg:w-[460px] lg:h-[460px] xl:w-[500px] xl:h-[500px] rounded-full bg-[#ff7b7b]/90 shadow-2xl z-0 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 lg:left-auto lg:right-2 xl:right-6 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] md:w-[400px] md:h-[400px] lg:w-[460px] lg:h-[460px] xl:w-[500px] xl:h-[500px] rounded-full bg-[#ff9ba2]/90 shadow-2xl z-0 pointer-events-none" />
 
             {/* 2. Cutout photo: subject silhouette overflowing the circle and bleeding to the bottom edge */}
             <div className="relative z-10 w-[280px] h-[360px] sm:w-[360px] sm:h-[440px] md:w-[420px] md:h-[500px] lg:w-[460px] lg:h-[540px] xl:w-[500px] xl:h-[580px] flex items-end justify-center">

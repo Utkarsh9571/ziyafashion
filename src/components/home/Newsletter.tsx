@@ -20,7 +20,7 @@ export default function Newsletter() {
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6">
         
         {/* Header */}
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff5252] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ff7d86] tracking-tight">
           Stay Connected with Ziya Fashion
         </h2>
         <div className="ref-divider">

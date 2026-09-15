@@ -28,10 +28,10 @@ export default function InstagramBar() {
           href="https://www.instagram.com/ziyaadmn?igsh=YXJyZnpuMWdiYnls"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center bg-[#ff5252] text-white pl-4 sm:pl-6 pr-1.5 sm:pr-2 py-1.5 sm:py-2 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 border border-white/20 gap-2 sm:gap-3 whitespace-nowrap"
+          className="inline-flex items-center bg-[#ff7d86] text-white pl-4 sm:pl-6 pr-1.5 sm:pr-2 py-1.5 sm:py-2 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 border border-white/20 gap-2 sm:gap-3 whitespace-nowrap"
         >
           <span>Follow on Instagram</span>
-          <span className="bg-[#ff7979] text-white text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full font-bold flex items-center gap-1 shadow-inner">
+          <span className="bg-[#ff9ba2] text-white text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full font-bold flex items-center gap-1 shadow-inner">
             <span>Follow</span>
             <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </span>

@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero Section */}
-      <section className="w-full bg-[#ff5252] text-white">
+      <section className="w-full bg-[#ff7d86] text-white">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 pb-16 text-center">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
             About Ziya Fashion
@@ -37,7 +37,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="lg:col-span-6 space-y-4 sm:space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#ff5252]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#ff7d86]">
               Our Story & Philosophy
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#212529]">
@@ -49,7 +49,7 @@ export default function AboutPage() {
             <div className="pt-2">
               <Link
                 href="/appointment"
-                className="inline-block bg-[#ff5252] text-white px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#f03e3e] transition-colors"
+                className="inline-block bg-[#ff7d86] text-white px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#e85661] transition-colors"
               >
                 Book An Appointment
               </Link>

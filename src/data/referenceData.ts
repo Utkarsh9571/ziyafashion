@@ -28,7 +28,7 @@ export const AUDIENCE_QUICK_LINKS: AudienceQuickLink[] = [
     id: "aud-women",
     title: "WOMEN",
     ctaText: "Explore",
-    bgClass: "bg-[#ff9999]/90 text-white",
+    bgClass: "bg-[#ff7d86]/90 text-white",
     modelImage: "/images/home/category-women.jpg",
     href: "/product-gallery/",
   },

@@ -18,7 +18,7 @@ export default function BlogListingPage() {
   return (
     <div className="bg-white min-h-screen flex flex-col w-full">
       {/* Full-Width Hero Section */}
-      <section className="w-full bg-[#ff5252] text-white overflow-hidden relative">
+      <section className="w-full bg-[#ff7d86] text-white overflow-hidden relative">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 pt-6 sm:pt-10 pb-16 sm:pb-20 lg:pb-24 text-center">
           <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/95 uppercase mb-2">
             EDITORIAL &amp; INSIGHTS
@@ -35,7 +35,7 @@ export default function BlogListingPage() {
       {/* Main Blog Grid */}
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-14 sm:py-20">
         <div className="text-center mb-12 sm:mb-16">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#ff5252] mb-1">
+          <p className="text-xs font-bold uppercase tracking-wider text-[#ff7d86] mb-1">
             LATEST ARTICLES
           </p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#212529] tracking-tight">
@@ -69,7 +69,7 @@ export default function BlogListingPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   {post.category && (
-                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#ff5252] text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#ff7d86] text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
                       {post.category}
                     </div>
                   )}
@@ -80,19 +80,19 @@ export default function BlogListingPage() {
                   {/* Meta Info */}
                   <div className="flex items-center gap-4 text-[11px] text-neutral-500 font-medium">
                     <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-[#ff5252]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#ff7d86]" />
                       {post.date}
                     </span>
                     {post.readTime && (
                       <span className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-[#ff5252]" />
+                        <Clock className="w-3.5 h-3.5 text-[#ff7d86]" />
                         {post.readTime}
                       </span>
                     )}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#212529] group-hover:text-[#ff5252] transition-colors leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#212529] group-hover:text-[#ff7d86] transition-colors leading-snug">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
 
@@ -107,7 +107,7 @@ export default function BlogListingPage() {
               <div className="p-6 sm:p-7 pt-0">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#ff5252] group-hover:translate-x-1 transition-transform uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#ff7d86] group-hover:translate-x-1 transition-transform uppercase tracking-wider"
                 >
                   <span>Read More</span>
                   <ArrowRight className="w-4 h-4" />
